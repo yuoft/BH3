@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "zzz",
+    "zzz",
+    "z  "
+  ],
+  "key": {
+    "z": {
+      "item": "bh3:crystal5"
+    }
+  },
+  "result": {
+    "item": "bh3:crystal35"
+  }
+}

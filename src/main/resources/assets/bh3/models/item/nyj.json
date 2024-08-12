@@ -1,0 +1,25 @@
+{
+  "loader": "forge:obj",
+  "model": "bh3:model/nyj.obj",
+  "flip-v": true,
+  "display": {
+    "thirdperson_righthand": {
+      "rotation": [ -30, -90, 0 ],
+      "translation": [ 4.5, 0, 3 ],
+      "scale": [ 1, 1, 1 ]
+    },
+    "firstperson_righthand": {
+      "rotation": [ -30, -90, 0 ],
+      "translation": [ 4.5, 0.5, 0.5 ],
+      "scale": [ 0.85, 0.85, 0.85 ]
+    },
+    "gui": {
+      "translation": [ -3, -3, 0],
+      "scale": [ 0.75, 0.75, 0.75]
+    },
+    "fixed": {
+      "translation": [ -3, -3, -3],
+      "scale": [ 0.75, 0.75, 0.75]
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xy ",
+    "   ",
+    "   "
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:diamond"
+    },
+    "y": {
+      "item": "minecraft:emerald"
+    }
+  },
+  "result": {
+    "item": "bh3:crystal1",
+    "count": 2
+  }
+}

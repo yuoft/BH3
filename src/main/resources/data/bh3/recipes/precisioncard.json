@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "zzz",
+    "zyz",
+    "zzz"
+  ],
+  "key": {
+    "y": {
+      "item": "minecraft:writable_book"
+    },
+    "z": {
+      "item": "bh3:crystal35"
+    }
+  },
+  "result": {
+    "item": "bh3:precisioncard"
+  }
+}
