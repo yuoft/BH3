@@ -6,7 +6,7 @@ modId="bh3"
 version="1.16.5-0.0.1"
 displayName="BH3"
 authors="yuo"
-logoFile="assets/bh3/textures/item/bh3rd.png"
+logoFile="bh3rd.png"
 description='''
 崩坏三。1.16.5
 '''
