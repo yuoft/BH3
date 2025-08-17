@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " z ",
+    "zyz",
+    " z "
+  ],
+  "key": {
+    "z": {
+      "item": "bh3:honkai_chip"
+    },
+    "y": {
+      "item": "minecraft:melon_slice"
+    }
+  },
+  "result": {
+    "item": "bh3:water_melon"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "particle": "bh3:block/bh_energy_ore",
+    "all": "bh3:block/bh_energy_ore"
+  }
+}

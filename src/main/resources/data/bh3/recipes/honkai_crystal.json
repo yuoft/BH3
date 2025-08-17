@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " z ",
+    "z z",
+    " z "
+  ],
+  "key": {
+    "z": {
+      "item": "bh3:triple_crystal"
+    }
+  },
+  "result": {
+    "item": "bh3:honkai_crystal"
+  }
+}

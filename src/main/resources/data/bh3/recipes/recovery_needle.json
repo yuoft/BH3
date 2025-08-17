@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " z ",
+    "zyz",
+    " z "
+  ],
+  "key": {
+    "z": {
+      "item": "bh3:honkai_chip"
+    },
+    "y": {
+      "item": "minecraft:totem_of_undying"
+    }
+  },
+  "result": {
+    "item": "bh3:recovery_needle"
+  }
+}

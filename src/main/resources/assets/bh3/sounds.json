@@ -1,0 +1,218 @@
+{
+  "bcy": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:bcy",
+        "stream": true
+      }
+    ]
+  },
+  "befall": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:befall",
+        "stream": true
+      }
+    ]
+  },
+  "bhsjdgj": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:bhsjdgj",
+        "stream": true
+      }
+    ]
+  },
+  "cyberangel": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:cyberangel",
+        "stream": true
+      }
+    ]
+  },
+  "dacapo": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:dacapo",
+        "stream": true
+      }
+    ]
+  },
+  "dualego": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:dualego",
+        "stream": true
+      }
+    ]
+  },
+  "girlinside": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:girlinside",
+        "stream": true
+      }
+    ]
+  },
+  "iras17514": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:iras17514",
+        "stream": true
+      }
+    ]
+  },
+  "lz": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:lz",
+        "stream": true
+      }
+    ]
+  },
+  "moonhalo": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:moonhalo",
+        "stream": true
+      }
+    ]
+  },
+  "nightglow": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:nightglow",
+        "stream": true
+      }
+    ]
+  },
+  "noceiling": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:noceiling",
+        "stream": true
+      }
+    ]
+  },
+  "oaths": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:oaths",
+        "stream": true
+      }
+    ]
+  },
+  "qnzy": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:qnzy",
+        "stream": true
+      }
+    ]
+  },
+  "qyx": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:qyx",
+        "stream": true
+      }
+    ]
+  },
+  "reburn": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:reburn",
+        "stream": true
+      }
+    ]
+  },
+  "regression": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:regression",
+        "stream": true
+      }
+    ]
+  },
+  "reoracle": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:reoracle",
+        "stream": true
+      }
+    ]
+  },
+  "rubia": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:rubia",
+        "stream": true
+      }
+    ]
+  },
+  "starfall": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:starfall",
+        "stream": true
+      }
+    ]
+  },
+  "true0": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:true0",
+        "stream": true
+      }
+    ]
+  },
+  "wlzj": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:wlzj",
+        "stream": true
+      }
+    ]
+  },
+  "xynxszr": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:xynxszr",
+        "stream": true
+      }
+    ]
+  },
+  "zcfzq": {
+    "category": "record",
+    "sounds": [
+      {
+        "name": "bh3:zcfzq",
+        "stream": true
+      }
+    ]
+  }
+}

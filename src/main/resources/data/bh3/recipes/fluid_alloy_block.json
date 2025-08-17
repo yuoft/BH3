@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "zzz",
+    "zyz",
+    "zzz"
+  ],
+  "key": {
+    "z": {
+      "item": "bh3:fluid_alloy"
+    },
+    "y": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "bh3:fluid_alloy_block"
+  }
+}
