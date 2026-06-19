@@ -37,23 +37,21 @@ public class ClientEvent {
         event.registerEntityRenderer(BH3EntityTypes.WEAPON_ARROW.get(), WeaponArrowRender::new); //投掷物渲染
     }
 
+    //物品obj模型注册
     @SubscribeEvent
     public  static void registerModel(ModifyBakingResult event){
         Map<ResourceLocation, BakedModel> models = event.getModels();
-        HashMap<ModelResourceLocation, BakedModel> list = new HashMap<>();
+        ModelResourceLocation diamondLoc = new ModelResourceLocation(ResourceLocation.parse("diamond_sword"), "inventory");
+        BakedModel diamondModel = models.get(diamondLoc);
         for (RegistryObject<Item> entry : BH3Items.ITEMS.getEntries()) {
             if (entry.get() instanceof BH3Weapon || entry.get() instanceof BH3WeaponBow){
                 ModelResourceLocation res = new ModelResourceLocation(entry.getId(), "inventory");
-                BakedModel model = models.get(res);
-                list.put(res, model);
+                BakedModel objModel = models.get(res);
+                if (objModel != null && !(objModel instanceof ItemModel)) {
+                    ItemModel itemModel = new ItemModel(objModel, diamondModel);
+                    event.getModels().put(res, itemModel);
+                }
             }
         }
-
-        list.forEach((k, v) ->{
-            if (v != null && !(v instanceof ItemModel)) {
-                ItemModel itemModel = new ItemModel(v);
-                event.getModels().put(k, itemModel);
-            }
-        });
     }
 }

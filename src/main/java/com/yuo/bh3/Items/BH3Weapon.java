@@ -1,17 +1,12 @@
 package com.yuo.bh3.Items;
 
-import com.yuo.bh3.Client.BH3ItemRender;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 import java.util.List;
-import java.util.function.Consumer;
 
 /**
  * 使用obj模组的崩坏三武器
@@ -30,15 +25,5 @@ public class BH3Weapon extends SwordItem {
         if (split.length == 3 && split[2] != null) {
             components.add(Component.translatable("bh3.tips." + split[2]));
         }
-    }
-
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return new BH3ItemRender();
-            }
-        });
     }
 }

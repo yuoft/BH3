@@ -1,10 +1,8 @@
 package com.yuo.bh3.Items;
 
-import com.yuo.bh3.Client.BH3ItemRender;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.WeaponArrowEntity;
 import net.minecraft.ChatFormatting;
-import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
@@ -16,10 +14,8 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
-import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.common.ForgeHooks;
 
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
@@ -31,15 +27,6 @@ public class BH3WeaponBow extends BowItem {
 		super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
 	}
 
-	@Override
-	public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-		consumer.accept(new IClientItemExtensions() {
-			@Override
-			public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-				return new BH3ItemRender();
-			}
-		});
-	}
 
 	@Override
 	public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft) {

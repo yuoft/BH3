@@ -11,56 +11,51 @@ import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.BlockState;
 
 import javax.annotation.Nullable;
-import java.util.Collections;
 import java.util.List;
-import java.util.Random;
 
 public class ItemModel implements BakedModel {
-    private BakedModel bakedModel;
-    public ItemModel(BakedModel bakedModel) {
-        this.bakedModel = bakedModel;
+    private final BakedModel objModel;      // 您的OBJ模型
+    private final BakedModel diamondModel;  // 钻石剑模型（替代品）
+
+    public ItemModel(BakedModel objModel, BakedModel diamondModel) {
+        this.objModel = objModel;
+        this.diamondModel = diamondModel;
+    }
+
+    private BakedModel getModelForContext(ItemDisplayContext context) {
+        // 在GUI、展示框等场景使用钻石剑模型以提高性能
+        if (context == ItemDisplayContext.GUI ||
+                context == ItemDisplayContext.FIXED) {
+            return diamondModel;
+        }
+        return objModel;
     }
 
     @Override
-    public List<BakedQuad> getQuads(@org.jetbrains.annotations.Nullable BlockState blockState, @org.jetbrains.annotations.Nullable Direction direction, RandomSource randomSource) {
-        return this.bakedModel.getQuads(blockState, direction, randomSource);
+    public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction dir, RandomSource rand) {
+        return objModel.getQuads(state, dir, rand);
     }
 
-    @Override
-    public boolean useAmbientOcclusion() {
-        return this.bakedModel.useAmbientOcclusion();
-    }
-
-    @Override
-    public boolean isGui3d() {
-        return this.bakedModel.isGui3d();
-    }
-
-    @Override
-    public boolean usesBlockLight() {
-        return this.bakedModel.usesBlockLight();
-    }
-
-    @Override
-    public boolean isCustomRenderer() {
-        return true;
-    }
-
-    @Override
-    public TextureAtlasSprite getParticleIcon() {
-        return this.bakedModel.getParticleIcon();
-    }
-
-    @Override
-    public ItemOverrides getOverrides() {
-        return this.bakedModel.getOverrides();
-    }
-
+    // 核心：根据上下文选择模型并应用变换
     @Override
     public BakedModel applyTransform(ItemDisplayContext transformType, PoseStack poseStack, boolean applyLeftHandTransform) {
-        if (BH3ItemRender.isRender(transformType)) {
-            return this;
-        }
-        return this.bakedModel.applyTransform(transformType, poseStack, applyLeftHandTransform);
+        BakedModel selected = getModelForContext(transformType);
+        // 如果选中的模型就是自身（防止递归），直接调用其applyTransform
+        // 但这里selected不会是this，因为this是包装类，selected是内部模型
+        return selected.applyTransform(transformType, poseStack, applyLeftHandTransform);
     }
+
+    // 其他委托方法
+    @Override
+    public boolean useAmbientOcclusion() { return objModel.useAmbientOcclusion(); }
+    @Override
+    public boolean isGui3d() { return objModel.isGui3d(); }
+    @Override
+    public boolean usesBlockLight() { return objModel.usesBlockLight(); }
+    @Override
+    public boolean isCustomRenderer() { return false; } // 关键：禁用自定义渲染
+    @Override
+    public TextureAtlasSprite getParticleIcon() { return objModel.getParticleIcon(); }
+    @Override
+    public ItemOverrides getOverrides() { return objModel.getOverrides(); }
 }
