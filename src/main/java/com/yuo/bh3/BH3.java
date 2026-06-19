@@ -23,7 +23,8 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 public class BH3 {
 	public static final String MOD_ID = "bh3";
     public static final IProxy proxy = DistExecutor.safeRunForDist(() -> ClientProxy::new, () -> CommonProxy::new);
-	public BH3() {
+    @SuppressWarnings("removal")
+    public BH3() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SERVER_CONFIG); //配置文件
         modEventBus.addListener(this::commonSetup);
@@ -36,6 +37,12 @@ public class BH3 {
         BH3EntityTypes.ENTITY_TYPES.register(modEventBus);
 
         proxy.registerHandlers();
+
+        /*
+         * 武器json简化，父json使用？
+         * 史诗战斗兼容
+         * 物理实体模型属性调整
+         */
 
     }
 

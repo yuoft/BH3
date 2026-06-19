@@ -1,6 +1,7 @@
 package com.yuo.bh3.Client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.yuo.bh3.Config;
 import net.minecraft.client.renderer.block.model.BakedQuad;
 import net.minecraft.client.renderer.block.model.ItemOverrides;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
@@ -9,10 +10,13 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.BlockState;
+import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
+import yesman.epicfight.world.capabilities.item.CapabilityItem.WeaponCategories;
 
 import javax.annotation.Nullable;
 import java.util.List;
 
+@SuppressWarnings("removal")
 public class ItemModel implements BakedModel {
     private final BakedModel objModel;      // 您的OBJ模型
     private final BakedModel diamondModel;  // 钻石剑模型（替代品）
@@ -23,12 +27,19 @@ public class ItemModel implements BakedModel {
     }
 
     private BakedModel getModelForContext(ItemDisplayContext context) {
-        // 在GUI、展示框等场景使用钻石剑模型以提高性能
-        if (context == ItemDisplayContext.GUI ||
-                context == ItemDisplayContext.FIXED) {
-            return diamondModel;
-        }
-        return objModel;
+        return isRender(context) ? diamondModel : objModel;
+    }
+
+    /**
+     * 判断是否替换物品模型
+     * @param type 渲染类型
+     * @return 结果
+     */
+    public static boolean isRender(ItemDisplayContext type){
+//        if (type == ItemDisplayContext.GUI) return !Config.SERVER.isRenderGui.get();
+        if (type == ItemDisplayContext.FIXED) return !Config.SERVER.isRenderFixed.get();
+//        if (type == ItemDisplayContext.GROUND) return !Config.SERVER.isRenderGround.get();
+        return false;
     }
 
     @Override

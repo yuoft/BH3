@@ -2,6 +2,7 @@ package com.yuo.bh3.Event;
 
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.Client.ItemModel;
+import com.yuo.bh3.Client.PlacedWeaponRenderer;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.WeaponArrowRender;
 import com.yuo.bh3.Items.BH3Items;
@@ -35,6 +36,8 @@ public class ClientEvent {
     @SubscribeEvent
     public static void registerEntityRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerEntityRenderer(BH3EntityTypes.WEAPON_ARROW.get(), WeaponArrowRender::new); //投掷物渲染
+
+        event.registerEntityRenderer(BH3EntityTypes.PLACED_WEAPON.get(), PlacedWeaponRenderer::new);// 添加插地武器的渲染器
     }
 
     //物品obj模型注册

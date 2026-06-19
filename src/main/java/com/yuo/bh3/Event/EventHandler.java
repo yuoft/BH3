@@ -2,30 +2,34 @@ package com.yuo.bh3.Event;
 
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.Items.BH3Items;
-import net.minecraft.client.renderer.EffectInstance;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
+import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
+import yesman.epicfight.world.capabilities.item.CapabilityItem.Builder;
 
-import java.util.UUID;
+import java.util.Map;
+import java.util.function.Function;
 
 /**
  * 事件处理类
  */
 @Mod.EventBusSubscriber(modid = BH3.MOD_ID)
 public class EventHandler {
+
     //玩家登入
     @SubscribeEvent
     public static void playerLogin(PlayerEvent.PlayerLoggedInEvent event){
@@ -45,8 +49,7 @@ public class EventHandler {
         if (living instanceof Player player){
             ItemStack recoveryNeedle = getPlayerBagItem(player);
             if (!recoveryNeedle.isEmpty()){
-                NetWorkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> (ServerPlayer) player), new TotemPacket(recoveryNeedle, player));
-
+                NetWorkHandler.INSTANCE.send(PacketDistributor.TRACKING_ENTITY_AND_SELF.with(() -> player), new TotemPacket(recoveryNeedle, player));
                 player.removeAllEffects();
                 player.setHealth(8.0f);
                 player.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 2600, 3));
