@@ -5,6 +5,8 @@ import com.yuo.bh3.Entity.PlacedWeaponEntity;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
@@ -44,24 +46,18 @@ public class BH3Weapon extends SwordItem {
             float yaw = player.getYRot();
             float pitch = 0; // 默认垂直插地
 
-            // 创建并放置实体
             PlacedWeaponEntity weaponEntity = BH3EntityTypes.PLACED_WEAPON.get().create(level);
             if (weaponEntity != null) {
-                // 设置位置和朝向（根据丢出方向调整）
                 weaponEntity.setWeapon(stack.copy(), new BlockPos((int)x, (int)y, (int)z), yaw, pitch);
-                // 设置精确位置（不使用BlockPos避免偏移）
                 weaponEntity.setPos(x, y, z);
                 level.addFreshEntity(weaponEntity);
 
-                // 如果不在创造模式，消耗物品（因为原掉落物会被取消）
-                if (!player.getAbilities().instabuild) {
-                    stack.shrink(1);
-                }
+                stack.shrink(1);
+                level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 1.0F);
                 // 返回 false 取消原掉落物生成
                 return false;
             }
         }
-        // 如果生成失败，允许生成普通掉落物
         return true;
     }
 }

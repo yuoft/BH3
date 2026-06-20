@@ -23,8 +23,7 @@ public class PlacedWeaponRenderer extends EntityRenderer<PlacedWeaponEntity> {
     }
 
     @Override
-    public void render(PlacedWeaponEntity entity, float entityYaw, float partialTick,
-                       PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
+    public void render(PlacedWeaponEntity entity, float entityYaw, float partialTick, PoseStack poseStack, MultiBufferSource buffer, int packedLight) {
         ItemStack stack = entity.getWeaponStack();
         if (stack.isEmpty()) return;
 
@@ -32,14 +31,12 @@ public class PlacedWeaponRenderer extends EntityRenderer<PlacedWeaponEntity> {
 
         // 1. 基础位置（由实体位置决定）
         // 2. 旋转：让武器竖直（剑尖朝下）
-        // 具体旋转角度取决于您的OBJ模型默认朝向，需要微调
-        // 假设模型默认朝向为+Z，需要绕X轴旋转-90°使其竖直，再绕Y轴旋转entityYaw调整朝向
-        poseStack.mulPose(Axis.ZP.rotationDegrees(180));
-//        poseStack.mulPose(Axis.XP.rotationDegrees(-45));
-        poseStack.mulPose(Axis.YP.rotationDegrees(entity.getYRot()));
+        poseStack.mulPose(Axis.ZP.rotationDegrees(-135));
+        poseStack.mulPose(Axis.XP.rotationDegrees(0));
+//        poseStack.mulPose(Axis.YP.rotationDegrees(entity.getYRot()));
 
         // 3. 微调位置使剑尖着地（根据模型偏移）
-        poseStack.translate(0, -0.5, 0); // 向下偏移，数值需根据模型实际高度调整
+        poseStack.translate(-0.75, -0.75, -0.25); // 向下偏移，数值需根据模型实际高度调整
 
         // 4. 如果需要缩放，可在此时应用
 

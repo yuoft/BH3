@@ -20,6 +20,7 @@ import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
 import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.event.ForgeEventFactory;
 
 import java.util.function.Predicate;
 
@@ -32,53 +33,40 @@ public class BH3WeaponBow extends BowItem {
 		super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
 	}
 
-	// BH3Weapon.java
 	@Override
-	public InteractionResult useOn(UseOnContext context) {
-		Level level = context.getLevel();
-		BlockPos pos = context.getClickedPos();
-		Player player = context.getPlayer();
-		InteractionHand hand = context.getHand();
+	public boolean onDroppedByPlayer(ItemStack stack, Player player) {
+		Level level = player.level();
+		if (!level.isClientSide()) {
+			double x = player.getX() + player.getLookAngle().x * 1.5;
+			double y = player.getY() + player.getEyeHeight() - 0.3;
+			double z = player.getZ() + player.getLookAngle().z * 1.5;
 
-		if (!level.isClientSide() && player != null) {
-			// 获取玩家视角方向，决定武器的朝向
-			float yaw = player.getYRot(); // 水平角度
-			float pitch = 0; // 默认垂直
+			float yaw = player.getYRot();
+			float pitch = 0;
 
-			// 如果玩家蹲下+右键，可以改变倾斜角度
-			if (player.isShiftKeyDown()) {
-				pitch = 90; // 水平放置（类似插在墙上）
-			}
-
-			// 计算放置位置（点击的方块表面）
-			BlockPos placePos = pos.relative(context.getClickedFace());
-			ItemStack stack = player.getItemInHand(hand);
-
-			// 创建并放置实体
 			PlacedWeaponEntity weaponEntity = BH3EntityTypes.PLACED_WEAPON.get().create(level);
 			if (weaponEntity != null) {
-				weaponEntity.setWeapon(stack.copy(), placePos, yaw, pitch);
+				weaponEntity.setWeapon(stack.copy(), new BlockPos((int)x, (int)y, (int)z), yaw, pitch);
+				weaponEntity.setPos(x, y, z);
 				level.addFreshEntity(weaponEntity);
 
-				// 如果不是创造模式，消耗一个物品
-				if (!player.getAbilities().instabuild) {
-					stack.shrink(1);
-				}
-				return InteractionResult.SUCCESS;
+				stack.shrink(1);
+				level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 1.0F);
+				return false;
 			}
 		}
-		return InteractionResult.PASS;
+		return true;
 	}
 
 
 	@Override
 	public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft) {
 		if (entityLiving instanceof Player player) {
-			boolean flag = player.isCreative() || EnchantmentHelper.getItemEnchantmentLevel(Enchantments.INFINITY_ARROWS, stack) > 0;
+			boolean flag = player.isCreative() || stack.getEnchantmentLevel(Enchantments.INFINITY_ARROWS) > 0;
 			ItemStack itemstack = findAmmo(stack, player);
 
 			int i = this.getUseDuration(stack) - timeLeft;
-			i = net.minecraftforge.event.ForgeEventFactory.onArrowLoose(stack, worldIn, player, i, !itemstack.isEmpty() || flag);
+			i = ForgeEventFactory.onArrowLoose(stack, worldIn, player, i, !itemstack.isEmpty() || flag);
 			if (i < 0) return;
 
 			if (!itemstack.isEmpty() || flag) {
@@ -90,33 +78,34 @@ public class BH3WeaponBow extends BowItem {
 				if (!((double)f < 0.1D)) {
 					boolean flag1 = player.isCreative() || (itemstack.getItem() instanceof ArrowItem && ((ArrowItem)itemstack.getItem()).isInfinite(itemstack, stack, player));
 					if (!worldIn.isClientSide) {
-						AbstractArrow abstractarrowentity = new WeaponArrowEntity(BH3EntityTypes.WEAPON_ARROW.get(), player.getX(), player.getEyeY(), player.getZ() ,worldIn);
-						abstractarrowentity = customArrow(abstractarrowentity);
-						abstractarrowentity.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
-						abstractarrowentity.setCritArrow(true);
+						AbstractArrow arrow = new WeaponArrowEntity(BH3EntityTypes.WEAPON_ARROW.get(), player.getX(), player.getEyeY(), player.getZ() ,worldIn);
+						arrow = customArrow(arrow);
+						arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
+						arrow.setCritArrow(true);
+						arrow.setNoPhysics(true);
 
-						int j = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, stack);
+						int j = stack.getEnchantmentLevel(Enchantments.POWER_ARROWS);
 						if (j > 0) {
-							abstractarrowentity.setBaseDamage(abstractarrowentity.getBaseDamage() + (double)j * 0.5D + 0.5D);
+							arrow.setBaseDamage(arrow.getBaseDamage() + (double)j * 0.5D + 0.5D);
 						}
 
-						int k = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.PUNCH_ARROWS, stack);
+						int k = stack.getEnchantmentLevel(Enchantments.PUNCH_ARROWS);
 						if (k > 0) {
-							abstractarrowentity.setKnockback(k);
+							arrow.setKnockback(k);
 						}
 
-						if (EnchantmentHelper.getItemEnchantmentLevel(Enchantments.FLAMING_ARROWS, stack) > 0) {
-							abstractarrowentity.setRemainingFireTicks(100);
+						if (stack.getEnchantmentLevel(Enchantments.FLAMING_ARROWS) > 0) {
+							arrow.setRemainingFireTicks(100);
 						}
 
 						stack.hurtAndBreak(1, player, (player1) -> {
 							player1.broadcastBreakEvent(player.getUsedItemHand());
 						});
 						if (flag1 || player.isCreative() && (itemstack.getItem() == Items.SPECTRAL_ARROW || itemstack.getItem() == Items.TIPPED_ARROW)) {
-							abstractarrowentity.pickup = Pickup.CREATIVE_ONLY;
+							arrow.pickup = Pickup.CREATIVE_ONLY;
 						}
 
-						worldIn.addFreshEntity(abstractarrowentity);
+						worldIn.addFreshEntity(arrow);
 					}
 
 					worldIn.playSound((Player) null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (worldIn.random.nextFloat() * 0.4F + 1.2F) + f * 0.5F);

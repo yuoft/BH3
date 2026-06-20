@@ -77,4 +77,9 @@ public class WeaponArrowEntity extends AbstractArrow {
     protected ItemStack getPickupItem() {
         return new ItemStack(Items.ARROW);
     }
+
+    @Override
+    protected float getWaterInertia() {
+        return 0.95f;
+    }
 }
