@@ -10,8 +10,6 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.level.block.state.BlockState;
-import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
-import yesman.epicfight.world.capabilities.item.CapabilityItem.WeaponCategories;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -36,9 +34,9 @@ public class ItemModel implements BakedModel {
      * @return 结果
      */
     public static boolean isRender(ItemDisplayContext type){
-//        if (type == ItemDisplayContext.GUI) return !Config.SERVER.isRenderGui.get();
+        if (type == ItemDisplayContext.GUI) return !Config.SERVER.isRenderGui.get();
         if (type == ItemDisplayContext.FIXED) return !Config.SERVER.isRenderFixed.get();
-//        if (type == ItemDisplayContext.GROUND) return !Config.SERVER.isRenderGround.get();
+        if (type == ItemDisplayContext.GROUND) return !Config.SERVER.isRenderGround.get();
         return false;
     }
 

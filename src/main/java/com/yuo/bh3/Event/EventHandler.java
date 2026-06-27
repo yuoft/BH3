@@ -42,6 +42,11 @@ public class EventHandler {
                     .category(WeaponCategories.SWORD)   // 武器类型：剑、大剑、太刀等
                     ;
         });
+        map.put(BH3Items.AXYW.getId(), (item) -> {
+            return CapabilityItem.builder()
+                    .category(WeaponCategories.HOE)   // 武器类型：剑、大剑、太刀等
+                    ;
+        });
 
         /*
         .attributes(

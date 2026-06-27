@@ -8,8 +8,8 @@ import net.minecraft.world.level.Level;
 
 import java.util.List;
 
-public class BH3Item extends Item {
-    public BH3Item() {
+public class BH3BaseItem extends Item {
+    public BH3BaseItem() {
         super(new Properties());
     }
 

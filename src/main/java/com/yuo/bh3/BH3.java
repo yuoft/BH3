@@ -7,10 +7,6 @@ import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.Proxy.ClientProxy;
 import com.yuo.bh3.Proxy.CommonProxy;
 import com.yuo.bh3.Proxy.IProxy;
-import com.yuo.bh3.Wrold.ModWorldGen;
-import com.yuo.bh3.tab.BH3Tabs;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -18,6 +14,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
 
 @Mod("bh3")
 public class BH3 {
@@ -39,10 +36,13 @@ public class BH3 {
         proxy.registerHandlers();
 
         /*
-         * 武器属性枚举类
-         * 武器json简化，父json使用？
-         * 史诗战斗兼容
          * 物理实体模型属性调整
+         * 使用无尽加载obj的方法加载武器模型
+         * 使用数据生成
+         * 配方设计，成就系添加
+         * 武器等级（超限和普通？）+合成路径+升阶仪式
+         * 武器技能+特效（刀光可参考星海的mod）
+         * 更多内容
          */
 
     }

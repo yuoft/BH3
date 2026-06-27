@@ -18,9 +18,9 @@ import java.util.List;
  * 使用obj模组的崩坏三武器
  * @author yuo
  */
-public class BH3Weapon extends SwordItem {
+public class BH3BaseWeapon extends SwordItem {
 
-    public BH3Weapon(Tier tier, int damage, float speed) {
+    public BH3BaseWeapon(Tier tier, int damage, float speed) {
         super(tier, damage, speed, new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
     }
 

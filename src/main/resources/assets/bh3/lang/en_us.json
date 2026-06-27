@@ -173,6 +173,12 @@
 	"bh3.tips.bh3_zydatjn": "Continue their pioneering journey with their own will",
 	"bh3.tips.bh3_zydhg": "Life is a spiral of contradictions that contradict the law",
 
+	"bh3.tips.weapon_type_sword": "§cKatana",
+	"bh3.tips.weapon_type_big_sword": "§cGreatsword",
+	"bh3.tips.weapon_type_lance": "§cLance",
+	"bh3.tips.weapon_type_sickle": "§cSickle",
+	"bh3.tips.weapon_type_bow": "§cBow",
+
 	"bh3.tips.recovery_needle": "The scientific research team of Tianming analyzed the principle of necromancy and developed a drug that can inject a small amount of controlled catabolic energy into the human body, instantly reviving limbs that have stopped functioning.",
 
 	"block.bh3.energy_ore": "Energy Ore",

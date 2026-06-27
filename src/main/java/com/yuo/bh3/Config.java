@@ -34,9 +34,9 @@ public class Config {
 
         public ServerConfig(ForgeConfigSpec.Builder builder){
             builder.comment("Item is render Config").push("general");
-            this.isRenderGui = buildBoolean(builder, "isRenderGui", false, "obj is render?");
+            this.isRenderGui = buildBoolean(builder, "isRenderGui", true, "obj is render?");
             this.isRenderFixed = buildBoolean(builder, "isRenderFixed", false, "obj is render?");
-            this.isRenderGround = buildBoolean(builder, "isRenderGround", false, "obj is render?");
+            this.isRenderGround = buildBoolean(builder, "isRenderGround", true, "obj is render?");
             builder.pop();
 
         }

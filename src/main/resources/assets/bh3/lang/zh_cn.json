@@ -173,6 +173,12 @@
 	"bh3.tips.bh3_zydatjn": "用自己的意志去继续他们的拓荒之旅",
 	"bh3.tips.bh3_zydhg": "人生即为二律背反的矛盾螺旋",
 
+	"bh3.tips.weapon_type_sword": "§c太刀",
+	"bh3.tips.weapon_type_big_sword": "§c大剑",
+	"bh3.tips.weapon_type_lance": "§c骑枪",
+	"bh3.tips.weapon_type_sickle": "§c镰刀",
+	"bh3.tips.weapon_type_bow": "§c弓",
+
 	"bh3.tips.recovery_needle": "天命的科研小组分析死士化原理时研制出的药剂,它可以向人体注入微量受控的崩坏能，即时复苏机能停止的肢体。",
 
 	"block.bh3.energy_ore": "崩坏能矿石",

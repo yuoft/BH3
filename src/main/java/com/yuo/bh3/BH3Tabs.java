@@ -1,8 +1,7 @@
-package com.yuo.bh3.tab;
+package com.yuo.bh3;
 
-import com.yuo.bh3.BH3;
 import com.yuo.bh3.Items.BH3Items;
-import com.yuo.bh3.Items.BH3Weapon;
+import com.yuo.bh3.Items.BH3BaseWeapon;
 import com.yuo.bh3.Items.BH3WeaponBow;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -21,7 +20,7 @@ public class BH3Tabs {
 			.icon(() -> BH3Items.crystal1.get().getDefaultInstance())
 			.displayItems((parameters, output) -> {
 				for (RegistryObject<Item> entry : BH3Items.ITEMS.getEntries()) {
-					if (entry.get() instanceof BH3Weapon || entry.get() instanceof BH3WeaponBow) {
+					if (entry.get() instanceof BH3BaseWeapon || entry.get() instanceof BH3WeaponBow) {
 						output.accept(new ItemStack(entry.get()));
 					}
 				}
@@ -31,7 +30,7 @@ public class BH3Tabs {
 			.icon(() -> BH3Items.waterMelon.get().getDefaultInstance())
 			.displayItems((parameters, output) -> {
 				for (RegistryObject<Item> entry : BH3Items.ITEMS.getEntries()) {
-					if (!(entry.get() instanceof BH3Weapon || entry.get() instanceof BH3WeaponBow)) {
+					if (!(entry.get() instanceof BH3BaseWeapon || entry.get() instanceof BH3WeaponBow)) {
 						output.accept(new ItemStack(entry.get()));
 					}
 				}

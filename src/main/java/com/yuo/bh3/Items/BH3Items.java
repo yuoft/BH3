@@ -3,7 +3,6 @@ package com.yuo.bh3.Items;
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.Blocks.BH3Blocks;
 import com.yuo.bh3.SoundRegistry;
-import com.yuo.bh3.tab.BH3Tabs;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -17,39 +16,39 @@ public class BH3Items {
 
 	public static RegistryObject<Item> precisionCard = ITEMS.register("precision_card", PrecisionCard::new);
 
-	public static RegistryObject<Item> crystal1 = ITEMS.register("crystal1", BH3Item::new);
-	public static RegistryObject<Item> crystal5 = ITEMS.register("crystal5", BH3Item::new);
-	public static RegistryObject<Item> crystal25 = ITEMS.register("crystal25", BH3Item::new);
-	public static RegistryObject<Item> crystal50 = ITEMS.register("crystal50", BH3Item::new);
-	public static RegistryObject<Item> crystal100 = ITEMS.register("crystal100", BH3Item::new);
+	public static RegistryObject<Item> crystal1 = ITEMS.register("crystal1", BH3BaseItem::new);
+	public static RegistryObject<Item> crystal5 = ITEMS.register("crystal5", BH3BaseItem::new);
+	public static RegistryObject<Item> crystal25 = ITEMS.register("crystal25", BH3BaseItem::new);
+	public static RegistryObject<Item> crystal50 = ITEMS.register("crystal50", BH3BaseItem::new);
+	public static RegistryObject<Item> crystal100 = ITEMS.register("crystal100", BH3BaseItem::new);
 
 	public static RegistryObject<Item> baseChip = ITEMS.register("base_chip", Chips::new);
 	public static RegistryObject<Item> advancedChips = ITEMS.register("advanced_chips", Chips::new);
 	public static RegistryObject<Item> seniorChips = ITEMS.register("senior_chips", Chips::new);
 	public static RegistryObject<Item> premiumChips = ITEMS.register("premium_chips", Chips::new);
 
-	public static RegistryObject<Item> einsteinRingmagnet = ITEMS.register("einstein_ringmagnet", BH3Item::new);
-	public static RegistryObject<Item> superHydrogenium = ITEMS.register("super_hydrogenium", BH3Item::new);
-	public static RegistryObject<Item> phaseTransferMirror = ITEMS.register("phase_transfer_mirror", BH3Item::new);
-	public static RegistryObject<Item> brokenBlade = ITEMS.register("broken_blade", BH3Item::new);
-	public static RegistryObject<Item> nanoCeramic = ITEMS.register("nano_ceramic", BH3Item::new);
-	public static RegistryObject<Item> recoveryNeedle = ITEMS.register("recovery_needle", BH3Item::new);
-	public static RegistryObject<Item> smallReactor = ITEMS.register("small_reactor", BH3Item::new);
-	public static RegistryObject<Item> titaniumAlloyBarrel = ITEMS.register("titanium_alloy_barrel", BH3Item::new);
-	public static RegistryObject<Item> soulTeel = ITEMS.register("soul_teel", BH3Item::new);
-	public static RegistryObject<Item> spaceLens = ITEMS.register("space_lens", BH3Item::new);
+	public static RegistryObject<Item> einsteinRingmagnet = ITEMS.register("einstein_ringmagnet", BH3BaseItem::new);
+	public static RegistryObject<Item> superHydrogenium = ITEMS.register("super_hydrogenium", BH3BaseItem::new);
+	public static RegistryObject<Item> phaseTransferMirror = ITEMS.register("phase_transfer_mirror", BH3BaseItem::new);
+	public static RegistryObject<Item> brokenBlade = ITEMS.register("broken_blade", BH3BaseItem::new);
+	public static RegistryObject<Item> nanoCeramic = ITEMS.register("nano_ceramic", BH3BaseItem::new);
+	public static RegistryObject<Item> recoveryNeedle = ITEMS.register("recovery_needle", BH3BaseItem::new);
+	public static RegistryObject<Item> smallReactor = ITEMS.register("small_reactor", BH3BaseItem::new);
+	public static RegistryObject<Item> titaniumAlloyBarrel = ITEMS.register("titanium_alloy_barrel", BH3BaseItem::new);
+	public static RegistryObject<Item> soulTeel = ITEMS.register("soul_teel", BH3BaseItem::new);
+	public static RegistryObject<Item> spaceLens = ITEMS.register("space_lens", BH3BaseItem::new);
 
-	public static RegistryObject<Item> fluidAlloyBlock = ITEMS.register("fluid_alloy_block", BH3Item::new);
-	public static RegistryObject<Item> fluidAlloy = ITEMS.register("fluid_alloy", BH3Item::new);
-	public static RegistryObject<Item> honkaiCrystal = ITEMS.register("honkai_crystal", BH3Item::new);
-	public static RegistryObject<Item> tripleCrystal = ITEMS.register("triple_crystal", BH3Item::new);
-	public static RegistryObject<Item> honkaiChip = ITEMS.register("honkai_chip", BH3Item::new);
+	public static RegistryObject<Item> fluidAlloyBlock = ITEMS.register("fluid_alloy_block", BH3BaseItem::new);
+	public static RegistryObject<Item> fluidAlloy = ITEMS.register("fluid_alloy", BH3BaseItem::new);
+	public static RegistryObject<Item> honkaiCrystal = ITEMS.register("honkai_crystal", BH3BaseItem::new);
+	public static RegistryObject<Item> tripleCrystal = ITEMS.register("triple_crystal", BH3BaseItem::new);
+	public static RegistryObject<Item> honkaiChip = ITEMS.register("honkai_chip", BH3BaseItem::new);
 
-	public static RegistryObject<Item> weaponMold0 = ITEMS.register("weapon_mold0", BH3Item::new);
-	public static RegistryObject<Item> weaponMold1 = ITEMS.register("weapon_mold1", BH3Item::new);
-	public static RegistryObject<Item> weaponMold2 = ITEMS.register("weapon_mold2", BH3Item::new);
-	public static RegistryObject<Item> weaponMold3 = ITEMS.register("weapon_mold3", BH3Item::new);
-	public static RegistryObject<Item> weaponMold4 = ITEMS.register("weapon_mold4", BH3Item::new);
+	public static RegistryObject<Item> weaponMold0 = ITEMS.register("weapon_mold0", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMold1 = ITEMS.register("weapon_mold1", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMold2 = ITEMS.register("weapon_mold2", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMold3 = ITEMS.register("weapon_mold3", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMold4 = ITEMS.register("weapon_mold4", BH3BaseItem::new);
 
 	public static RegistryObject<Item> waterMelon = ITEMS.register("water_melon",
 			() -> new BH3Food(new FoodProperties.Builder().nutrition(3).saturationMod(9).build()));
