@@ -14,6 +14,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.Level.ExplosionInteraction;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.network.NetworkHooks;
 
 public class WeaponArrowEntity extends AbstractArrow {
@@ -31,6 +32,20 @@ public class WeaponArrowEntity extends AbstractArrow {
     public WeaponArrowEntity(EntityType<? extends AbstractArrow> type, LivingEntity shooter, Level world) {
         super(type, world);
         this.setBaseDamage(5);
+    }
+
+    @Override
+    public void tick() {
+        super.tick();
+        // 如果启用了自定义重力
+        if (!this.isNoGravity()) {
+            Vec3 motion = this.getDeltaMovement();
+            // 原版重力是 -0.05，这里我们将其替换为 -0.05 * gravityMultiplier
+            // 但由于 super.tick() 已经应用了 -0.05，我们需要补偿
+            // 我们可以将 motion.y += -0.05 * gravityMultiplier - (-0.05) = -0.05 * (gravityMultiplier - 1)
+            motion = motion.add(0, -0.05 * (1.5 - 1), 0);
+            this.setDeltaMovement(motion);
+        }
     }
 
     @Override

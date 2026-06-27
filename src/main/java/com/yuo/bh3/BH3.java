@@ -39,6 +39,7 @@ public class BH3 {
         proxy.registerHandlers();
 
         /*
+         * 武器属性枚举类
          * 武器json简化，父json使用？
          * 史诗战斗兼容
          * 物理实体模型属性调整

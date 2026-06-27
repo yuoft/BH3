@@ -5,7 +5,7 @@ package com.yuo.bh3.Items;
  */
 public class BH3WeaponBigSword extends BH3Weapon {
 
-	public BH3WeaponBigSword() {
-		super(BH3ItemTier.BH_32, 2, -3.0f);
+	public BH3WeaponBigSword(WeaponAttributes wa) {
+		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed());
 	}
 }

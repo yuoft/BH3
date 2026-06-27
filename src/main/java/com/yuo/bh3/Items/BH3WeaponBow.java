@@ -28,9 +28,13 @@ import java.util.function.Predicate;
  * 弓
  */
 public class BH3WeaponBow extends BowItem {
+	private final int damage;
+	private final float damageSpeed;
 
-	public BH3WeaponBow() {
+	public BH3WeaponBow(WeaponAttributes wa) {
 		super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
+		this.damage = wa.getDamage();
+		this.damageSpeed = wa.getDamageSpeed();
 	}
 
 	@Override
@@ -79,10 +83,10 @@ public class BH3WeaponBow extends BowItem {
 					boolean flag1 = player.isCreative() || (itemstack.getItem() instanceof ArrowItem && ((ArrowItem)itemstack.getItem()).isInfinite(itemstack, stack, player));
 					if (!worldIn.isClientSide) {
 						AbstractArrow arrow = new WeaponArrowEntity(BH3EntityTypes.WEAPON_ARROW.get(), player.getX(), player.getEyeY(), player.getZ() ,worldIn);
-						arrow = customArrow(arrow);
+//						arrow = customArrow(arrow);
 						arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
 						arrow.setCritArrow(true);
-						arrow.setNoPhysics(true);
+//						arrow.setNoPhysics(true);
 
 						int j = stack.getEnchantmentLevel(Enchantments.POWER_ARROWS);
 						if (j > 0) {
@@ -120,6 +124,14 @@ public class BH3WeaponBow extends BowItem {
 				}
 			}
 		}
+	}
+
+	public int getDamage() {
+		return damage;
+	}
+
+	public float getDamageSpeed() {
+		return damageSpeed;
 	}
 
 	//寻找弹药

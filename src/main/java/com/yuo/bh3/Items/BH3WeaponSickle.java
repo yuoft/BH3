@@ -5,8 +5,8 @@ package com.yuo.bh3.Items;
  */
 public class BH3WeaponSickle extends BH3Weapon {
 
-	public BH3WeaponSickle() {
-		super(BH3ItemTier.BH_30, -1, -2.4f);
+	public BH3WeaponSickle(WeaponAttributes wa) {
+		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed());
 	}
 
 }

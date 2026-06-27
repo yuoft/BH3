@@ -1,0 +1,6 @@
+{
+  "loader": "forge:obj",
+  "model": "bh3:model/zydhg.obj",
+  "flip-v": true,
+  "parent": "bh3:item/bh3_sword"
+}
