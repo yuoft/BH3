@@ -14,7 +14,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
 
 @Mod("bh3")
 public class BH3 {
@@ -40,7 +39,7 @@ public class BH3 {
          * 使用无尽加载obj的方法加载武器模型
          * 使用数据生成
          * 配方设计，成就系添加
-         * 武器等级（超限和普通？）+合成路径+升阶仪式
+         * 武器等级（超限和普通？）+合成路径+升阶仪式+数值调整
          * 武器技能+特效（刀光可参考星海的mod）
          * 更多内容
          */

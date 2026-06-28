@@ -6,60 +6,22 @@ import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
-import yesman.epicfight.api.forgeevent.WeaponCapabilityPresetRegistryEvent;
-import yesman.epicfight.world.capabilities.item.CapabilityItem;
-import yesman.epicfight.world.capabilities.item.CapabilityItem.Builder;
-import yesman.epicfight.world.capabilities.item.CapabilityItem.WeaponCategories;
-
-import java.util.Map;
-import java.util.function.Function;
 
 /**
  * 事件处理类
  */
 @Mod.EventBusSubscriber(modid = BH3.MOD_ID)
 public class EventHandler {
-
-    @SubscribeEvent
-    public static void registerWeaponCapabilities(WeaponCapabilityPresetRegistryEvent event) {
-        Map<ResourceLocation, Function<Item, CapabilityItem.Builder>> map = event.getTypeEntry();
-
-        // 构建 CapabilityItem
-        map.put(BH3Items.JM.getId(), (item) -> {
-            return CapabilityItem.builder()
-                    .category(WeaponCategories.SWORD)   // 武器类型：剑、大剑、太刀等
-                    ;
-        });
-        map.put(BH3Items.AXYW.getId(), (item) -> {
-            return CapabilityItem.builder()
-                    .category(WeaponCategories.HOE)   // 武器类型：剑、大剑、太刀等
-                    ;
-        });
-
-        /*
-        .attributes(
-                            CapabilityItem.Attributes.builder()
-                                    .armorNegation(0.5F)      // 破甲
-                                    .impact(1.0F)             // 冲击力
-                                    .maxStrikes(2)            // 最大连击次数
-                                    .damageBonus(2.0F)        // 额外伤害
-                                    .speedBonus(0.1F)         // 速度加成
-                                    .build()
-                    )
-         */
-    }
 
     //玩家登入
     @SubscribeEvent

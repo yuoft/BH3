@@ -88,7 +88,7 @@ dependencies {
 
     compileOnly fg.deobf("curse.maven:curios-309927:${curios_id}")
     compileOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
-    implementation fg.deobf("curse.maven:epic-fight-mod-405076:${epic_figh_id}")
+//    implementation fg.deobf("curse.maven:epic-fight-mod-405076:${epic_figh_id}")
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")

@@ -52,6 +52,7 @@ public class PlacedWeaponEntity extends Entity {
     public void tick() {
         super.tick();
         if (!this.level().isClientSide) {
+            if (getWeaponStack().isEmpty()) discard();
             // ----- 重力与地面处理 -----
             double bottomY = this.getY() - OFFSET_BOTTOM;
             BlockPos belowPos = new BlockPos((int) Math.floor(this.getX()), (int) Math.floor(bottomY), (int) Math.floor(this.getZ()));

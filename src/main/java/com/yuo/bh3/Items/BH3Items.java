@@ -105,30 +105,30 @@ public class BH3Items {
 
 	// 唱片
 	private static final int baseTick = 20;
-	public static RegistryObject<Item> bcy = ITEMS.register("disc_bcy", () -> new BH3MusicDisc(() -> SoundRegistry.bcy.get(), baseTick * 206));
-	public static RegistryObject<Item> befall = ITEMS.register("disc_befall", () -> new BH3MusicDisc(() -> SoundRegistry.befall.get(), baseTick * 191));
-	public static RegistryObject<Item> bhsjdgj = ITEMS.register("disc_bhsjdgj", () -> new BH3MusicDisc(() -> SoundRegistry.bhsjdgj.get(), baseTick * 189));
-	public static RegistryObject<Item> cyberangel = ITEMS.register("disc_cyberangel", () -> new BH3MusicDisc(() -> SoundRegistry.cyberangel.get(), baseTick * 180));
-	public static RegistryObject<Item> dacapo = ITEMS.register("disc_dacapo", () -> new BH3MusicDisc(() -> SoundRegistry.dacapo.get(), baseTick * 134));
-	public static RegistryObject<Item> dualego = ITEMS.register("disc_dualego", () -> new BH3MusicDisc(() -> SoundRegistry.dualego.get(), baseTick * 188));
-	public static RegistryObject<Item> girlinside = ITEMS.register("disc_girlinside", () -> new BH3MusicDisc(() -> SoundRegistry.girlinside.get(), baseTick * 189));
-	public static RegistryObject<Item> iras17514 = ITEMS.register("disc_iras17514", () -> new BH3MusicDisc(() -> SoundRegistry.iras17514.get(), baseTick * 134));
-	public static RegistryObject<Item> lz = ITEMS.register("disc_lz", () -> new BH3MusicDisc(() -> SoundRegistry.lz.get(), baseTick * 176));
-	public static RegistryObject<Item> moonhalo = ITEMS.register("disc_moonhalo", () -> new BH3MusicDisc(() -> SoundRegistry.moonhalo.get(), baseTick * 204));
-	public static RegistryObject<Item> nightglow = ITEMS.register("disc_nightglow", () -> new BH3MusicDisc(() -> SoundRegistry.nightglow.get(), baseTick * 183));
-	public static RegistryObject<Item> noceiling = ITEMS.register("disc_noceiling", () -> new BH3MusicDisc(() -> SoundRegistry.noceiling.get(), baseTick * 130));
-	public static RegistryObject<Item> oaths = ITEMS.register("disc_oaths", () -> new BH3MusicDisc(() -> SoundRegistry.oaths.get(), baseTick * 240));
-	public static RegistryObject<Item> qnzy = ITEMS.register("disc_qnzy", () -> new BH3MusicDisc(() -> SoundRegistry.qnzy.get(), baseTick * 197));
-	public static RegistryObject<Item> qyx = ITEMS.register("disc_qyx", () -> new BH3MusicDisc(() -> SoundRegistry.qyx.get(), baseTick * 175));
-	public static RegistryObject<Item> reburn = ITEMS.register("disc_reburn", () -> new BH3MusicDisc(() -> SoundRegistry.reburn.get(), baseTick * 180));
-	public static RegistryObject<Item> regression = ITEMS.register("disc_regression", () -> new BH3MusicDisc(() -> SoundRegistry.regression.get(), baseTick * 236));
-	public static RegistryObject<Item> reoracle = ITEMS.register("disc_reoracle", () -> new BH3MusicDisc(() -> SoundRegistry.reoracle.get(), baseTick * 200));
-	public static RegistryObject<Item> rubia = ITEMS.register("disc_rubia", () -> new BH3MusicDisc(() -> SoundRegistry.rubia.get(), baseTick * 194));
-	public static RegistryObject<Item> starfall = ITEMS.register("disc_starfall", () -> new BH3MusicDisc(() -> SoundRegistry.starfall.get(), baseTick * 191));
-	public static RegistryObject<Item> true0 = ITEMS.register("disc_true0", () -> new BH3MusicDisc(() -> SoundRegistry.true0.get(), baseTick * 187));
-	public static RegistryObject<Item> wlzj = ITEMS.register("disc_wlzj", () -> new BH3MusicDisc(() -> SoundRegistry.wlzj.get(), baseTick * 163));
-	public static RegistryObject<Item> xynxszr = ITEMS.register("disc_xynxszr", () -> new BH3MusicDisc(() -> SoundRegistry.xynxszr.get(), baseTick * 201));
-	public static RegistryObject<Item> zcfzq = ITEMS.register("disc_zcfzq", () -> new BH3MusicDisc(() -> SoundRegistry.zcfzq.get(), baseTick * 288));
+	public static RegistryObject<Item> disc_bcy = ITEMS.register("disc_bcy", () -> new BH3MusicDisc(() -> SoundRegistry.bcy.get(), baseTick * 206));
+	public static RegistryObject<Item> disc_befall = ITEMS.register("disc_befall", () -> new BH3MusicDisc(() -> SoundRegistry.befall.get(), baseTick * 191));
+	public static RegistryObject<Item> disc_bhsjdgj = ITEMS.register("disc_bhsjdgj", () -> new BH3MusicDisc(() -> SoundRegistry.bhsjdgj.get(), baseTick * 189));
+	public static RegistryObject<Item> disc_cyberangel = ITEMS.register("disc_cyberangel", () -> new BH3MusicDisc(() -> SoundRegistry.cyberangel.get(), baseTick * 180));
+	public static RegistryObject<Item> disc_dacapo = ITEMS.register("disc_dacapo", () -> new BH3MusicDisc(() -> SoundRegistry.dacapo.get(), baseTick * 134));
+	public static RegistryObject<Item> disc_dualego = ITEMS.register("disc_dualego", () -> new BH3MusicDisc(() -> SoundRegistry.dualego.get(), baseTick * 188));
+	public static RegistryObject<Item> disc_girlinside = ITEMS.register("disc_girlinside", () -> new BH3MusicDisc(() -> SoundRegistry.girlinside.get(), baseTick * 189));
+	public static RegistryObject<Item> disc_iras17514 = ITEMS.register("disc_iras17514", () -> new BH3MusicDisc(() -> SoundRegistry.iras17514.get(), baseTick * 134));
+	public static RegistryObject<Item> disc_lz = ITEMS.register("disc_lz", () -> new BH3MusicDisc(() -> SoundRegistry.lz.get(), baseTick * 176));
+	public static RegistryObject<Item> disc_moonhalo = ITEMS.register("disc_moonhalo", () -> new BH3MusicDisc(() -> SoundRegistry.moonhalo.get(), baseTick * 204));
+	public static RegistryObject<Item> disc_nightglow = ITEMS.register("disc_nightglow", () -> new BH3MusicDisc(() -> SoundRegistry.nightglow.get(), baseTick * 183));
+	public static RegistryObject<Item> disc_noceiling = ITEMS.register("disc_noceiling", () -> new BH3MusicDisc(() -> SoundRegistry.noceiling.get(), baseTick * 130));
+	public static RegistryObject<Item> disc_oaths = ITEMS.register("disc_oaths", () -> new BH3MusicDisc(() -> SoundRegistry.oaths.get(), baseTick * 240));
+	public static RegistryObject<Item> disc_qnzy = ITEMS.register("disc_qnzy", () -> new BH3MusicDisc(() -> SoundRegistry.qnzy.get(), baseTick * 197));
+	public static RegistryObject<Item> disc_qyx = ITEMS.register("disc_qyx", () -> new BH3MusicDisc(() -> SoundRegistry.qyx.get(), baseTick * 175));
+	public static RegistryObject<Item> disc_reburn = ITEMS.register("disc_reburn", () -> new BH3MusicDisc(() -> SoundRegistry.reburn.get(), baseTick * 180));
+	public static RegistryObject<Item> disc_regression = ITEMS.register("disc_regression", () -> new BH3MusicDisc(() -> SoundRegistry.regression.get(), baseTick * 236));
+	public static RegistryObject<Item> disc_reoracle = ITEMS.register("disc_reoracle", () -> new BH3MusicDisc(() -> SoundRegistry.reoracle.get(), baseTick * 200));
+	public static RegistryObject<Item> disc_rubia = ITEMS.register("disc_rubia", () -> new BH3MusicDisc(() -> SoundRegistry.rubia.get(), baseTick * 194));
+	public static RegistryObject<Item> disc_starfall = ITEMS.register("disc_starfall", () -> new BH3MusicDisc(() -> SoundRegistry.starfall.get(), baseTick * 191));
+	public static RegistryObject<Item> disc_true0 = ITEMS.register("disc_true0", () -> new BH3MusicDisc(() -> SoundRegistry.true0.get(), baseTick * 187));
+	public static RegistryObject<Item> disc_wlzj = ITEMS.register("disc_wlzj", () -> new BH3MusicDisc(() -> SoundRegistry.wlzj.get(), baseTick * 163));
+	public static RegistryObject<Item> disc_xynxszr = ITEMS.register("disc_xynxszr", () -> new BH3MusicDisc(() -> SoundRegistry.xynxszr.get(), baseTick * 201));
+	public static RegistryObject<Item> disc_zcfzq = ITEMS.register("disc_zcfzq", () -> new BH3MusicDisc(() -> SoundRegistry.zcfzq.get(), baseTick * 288));
 
 	public static final Item.Properties BLOCK_TAB = new Item.Properties();
 
