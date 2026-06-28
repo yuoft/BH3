@@ -1,0 +1,10 @@
+{
+  "type": "epicfight:bow",
+  "attributes": {
+    "common": {
+      "armor_negation": 20.0,
+      "impact": 2.5,
+      "max_strikes": 2.0
+    }
+  }
+}
