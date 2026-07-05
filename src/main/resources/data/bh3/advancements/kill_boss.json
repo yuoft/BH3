@@ -1,0 +1,56 @@
+{
+  "parent": "bh3:kill_with_weapon",
+  "display": {
+    "icon": {
+      "item": "minecraft:wither_skeleton_skull"
+    },
+    "title": {
+      "translate": "advancements.bh3.kill_boss.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.kill_boss.title.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "kill_wither": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:wither"
+        },
+        "killing_blow": {
+          "is_projectile": false
+        },
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "tag": "bh3:weapons"
+            }
+          }
+        }
+      }
+    },
+    "kill_ender_dragon": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": {
+          "type": "minecraft:ender_dragon"
+        },
+        "killing_blow": {
+          "is_projectile": false
+        },
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "tag": "bh3:weapons"
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [
+    [ "kill_wither", "kill_ender_dragon" ]
+  ]
+}

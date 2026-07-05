@@ -1,0 +1,27 @@
+{
+  "parent": "bh3:energy_ore",
+  "display": {
+    "icon": {
+      "item": "bh3:bh3_axyw"
+    },
+    "title": {
+      "translate": "advancements.bh3.get_weapon.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.get_weapon.title.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "has_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "bh3:weapons"
+          }
+        ]
+      }
+    }
+  }
+}

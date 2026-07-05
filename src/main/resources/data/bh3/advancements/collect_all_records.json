@@ -1,0 +1,190 @@
+{
+  "parent": "bh3:bh3",
+  "display": {
+    "icon": {
+      "item": "bh3:disc_bhsjdgj"
+    },
+    "title": {
+      "translate": "advancements.bh3.collect_all_records.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.collect_all_records.title.desc"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "disc_bcy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_bcy"] }]
+      }
+    },
+    "disc_befall": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_befall"] }]
+      }
+    },
+    "disc_bhsjdgj": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_bhsjdgj"] }]
+      }
+    },
+    "disc_cyberangel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_cyberangel"] }]
+      }
+    },
+    "disc_dacapo": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_dacapo"] }]
+      }
+    },
+    "disc_dualego": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_dualego"] }]
+      }
+    },
+    "disc_girlinside": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_girlinside"] }]
+      }
+    },
+    "disc_iras17514": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_iras17514"] }]
+      }
+    },
+    "disc_lz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_lz"] }]
+      }
+    },
+    "disc_moonhalo": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_moonhalo"] }]
+      }
+    },
+    "disc_nightglow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_nightglow"] }]
+      }
+    },
+    "disc_noceiling": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_noceiling"] }]
+      }
+    },
+    "disc_oaths": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_oaths"] }]
+      }
+    },
+    "disc_qnzy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_qnzy"] }]
+      }
+    },
+    "disc_qyx": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_qyx"] }]
+      }
+    },
+    "disc_reburn": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_reburn"] }]
+      }
+    },
+    "disc_regression": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_regression"] }]
+      }
+    },
+    "disc_reoracle": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_reoracle"] }]
+      }
+    },
+    "disc_rubia": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_rubia"] }]
+      }
+    },
+    "disc_starfall": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_starfall"] }]
+      }
+    },
+    "disc_true0": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_true0"] }]
+      }
+    },
+    "disc_wlzj": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_wlzj"] }]
+      }
+    },
+    "disc_xynxszr": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_xynxszr"] }]
+      }
+    },
+    "disc_zcfzq": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [{ "items": ["bh3:disc_zcfzq"] }]
+      }
+    }
+  },
+  "requirements": [
+    ["disc_bcy"],
+    ["disc_befall"],
+    ["disc_bhsjdgj"],
+    ["disc_cyberangel"],
+    ["disc_dacapo"],
+    ["disc_dualego"],
+    ["disc_girlinside"],
+    ["disc_iras17514"],
+    ["disc_lz"],
+    ["disc_moonhalo"],
+    ["disc_nightglow"],
+    ["disc_noceiling"],
+    ["disc_oaths"],
+    ["disc_qnzy"],
+    ["disc_qyx"],
+    ["disc_reburn"],
+    ["disc_regression"],
+    ["disc_reoracle"],
+    ["disc_rubia"],
+    ["disc_starfall"],
+    ["disc_true0"],
+    ["disc_wlzj"],
+    ["disc_xynxszr"],
+    ["disc_zcfzq"]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

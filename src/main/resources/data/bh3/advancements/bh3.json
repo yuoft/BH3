@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "item": "bh3:crystal1"
+    },
+    "title": {
+      "translate": "advancements.bh3.obtain_crystal.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.obtain_crystal.title.desc"
+    },
+    "frame": "task",
+    "background": "bh3:textures/block/crystal_ore.png"
+  },
+  "criteria": {
+    "has_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["bh3:crystal1"]
+          }
+        ]
+      }
+    }
+  }
+}

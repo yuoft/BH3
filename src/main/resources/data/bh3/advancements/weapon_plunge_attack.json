@@ -1,0 +1,20 @@
+{
+  "parent": "bh3:kill_with_weapon",
+  "display": {
+    "icon": {
+      "item": "bh3:bh3_jm"
+    },
+    "title": {
+      "translate": "advancements.bh3.weapon_plunge_attack.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.weapon_plunge_attack.title.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "plunge_attack": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

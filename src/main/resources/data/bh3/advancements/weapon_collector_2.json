@@ -1,0 +1,21 @@
+{
+  "parent": "bh3:weapon_collector_1",
+  "display": {
+    "icon": {
+      "item": "bh3:bh3_fld",
+      "count": 15
+    },
+    "title": {
+      "translate": "advancements.bh3.weapon_collector_2.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.weapon_collector_2.title.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "collect_15": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

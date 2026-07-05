@@ -1,0 +1,27 @@
+{
+  "parent": "bh3:energy_ore",
+  "display": {
+    "icon": {
+      "item": "bh3:base_chip"
+    },
+    "title": {
+      "translate": "advancements.bh3.base_chip.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.base_chip.title.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "has_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["bh3:base_chip"]
+          }
+        ]
+      }
+    }
+  }
+}

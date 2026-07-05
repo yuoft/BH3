@@ -1,0 +1,55 @@
+{
+  "parent": "bh3:get_weapon",
+  "display": {
+    "icon": {
+      "item": "bh3:bh3_jmwj"
+    },
+    "title": {
+      "translate": "advancements.bh3.special_weapon.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.special_weapon.title.desc"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "has_jm": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["bh3:bh3_jm"] }
+        ]
+      }
+    },
+    "has_jmwj": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["bh3:bh3_jmwj"] }
+        ]
+      }
+    },
+    "has_dzqlm": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["bh3:bh3_dzqlm"] }
+        ]
+      }
+    },
+    "has_zcb": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": ["bh3:bh3_zcb"] }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [ "has_jm", "has_jmwj", "has_dzqlm", "has_zcb" ]
+  ],
+  "rewards": {
+    "experience": 100
+  }
+}

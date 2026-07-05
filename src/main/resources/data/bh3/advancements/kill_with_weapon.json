@@ -1,0 +1,32 @@
+{
+  "parent": "bh3:get_weapon",
+  "display": {
+    "icon": {
+      "item": "bh3:bh3_cbz"
+    },
+    "title": {
+      "translate": "advancements.bh3.kill_with_weapon.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.kill_with_weapon.title.desc"
+    },
+    "frame": "task"
+  },
+  "criteria": {
+    "kill_with_weapon": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "killing_blow": {
+          "is_projectile": false
+        },
+        "player": {
+          "equipment": {
+            "mainhand": {
+              "tag": "bh3:bh3_weapons"
+            }
+          }
+        }
+      }
+    }
+  }
+}

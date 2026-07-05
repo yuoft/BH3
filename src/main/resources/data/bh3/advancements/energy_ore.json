@@ -1,0 +1,27 @@
+{
+  "parent": "bh3:bh3",
+  "display": {
+    "icon": {
+      "item": "bh3:energy_ore"
+    },
+    "title": {
+      "translate": "advancements.bh3.energy_ore.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.energy_ore.title.desc"
+    },
+    "frame": "goal"
+  },
+  "criteria": {
+    "has_crystal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": ["bh3:honkai_chip"]
+          }
+        ]
+      }
+    }
+  }
+}

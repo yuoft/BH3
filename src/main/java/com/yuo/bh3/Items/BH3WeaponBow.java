@@ -54,7 +54,7 @@ public class BH3WeaponBow extends BowItem {
 
             PlacedWeaponEntity weaponEntity = BH3EntityTypes.PLACED_WEAPON.get().create(level);
             if (weaponEntity != null) {
-                weaponEntity.setWeapon(stack.copy(), new BlockPos((int) x, (int) y, (int) z), yaw, pitch);
+                weaponEntity.setWeapon(stack.copy(), new BlockPos((int) x, (int) y, (int) z), yaw, pitch, player);
                 weaponEntity.setPos(x, y, z);
                 level.addFreshEntity(weaponEntity);
 
