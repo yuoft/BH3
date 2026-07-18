@@ -39,6 +39,7 @@ public class ClientEvent {
         ModelResourceLocation diamondLoc = new ModelResourceLocation(ResourceLocation.parse("diamond_sword"), "inventory");
         BakedModel diamondModel = models.get(diamondLoc);
         for (RegistryObject<Item> entry : BH3Items.ITEMS.getEntries()) {
+//            if (entry.get() == BH3Items.bh3_FLD.get()) continue;
             if (entry.get() instanceof BH3BaseWeapon || entry.get() instanceof BH3WeaponBow){
                 ModelResourceLocation res = new ModelResourceLocation(entry.getId(), "inventory");
                 BakedModel objModel = models.get(res);

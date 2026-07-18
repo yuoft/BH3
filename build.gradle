@@ -86,15 +86,14 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-    compileOnly fg.deobf("curse.maven:curios-309927:${curios_id}")
     compileOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
+    implementation fg.deobf("curse.maven:curios-309927:${curios_id}")
 //    implementation fg.deobf("curse.maven:epic-fight-mod-405076:${epic_figh_id}")
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    implementation fg.deobf("curse.maven:avaritia-endless-624491:${ae_id}")
 
     runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
-    runtimeOnly fg.deobf("top.theillusivec4.curios:curios-forge:${curios_ver}")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_ver}")
-    runtimeOnly fg.deobf("curse.maven:curios-309927:${curios_id}")
 }
 
 tasks.named('processResources', ProcessResources).configure {
