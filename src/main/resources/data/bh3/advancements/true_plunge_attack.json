@@ -1,0 +1,20 @@
+{
+  "parent": "bh3:weapon_plunge_attack",
+  "display": {
+    "icon": {
+      "item": "minecraft:diamond_sword"
+    },
+    "title": {
+      "translate": "advancements.bh3.true_plunge_attack.title"
+    },
+    "description": {
+      "translate": "advancements.bh3.true_plunge_attack.title.desc"
+    },
+    "frame": "challenge"
+  },
+  "criteria": {
+    "true_plunge_attack": {
+      "trigger": "minecraft:impossible"
+    }
+  }
+}

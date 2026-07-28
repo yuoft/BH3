@@ -2,7 +2,7 @@
   "parent": "bh3:get_weapon",
   "display": {
     "icon": {
-      "item": "bh3:bh3_cbz"
+      "item": "minecraft:wooden_sword"
     },
     "title": {
       "translate": "advancements.bh3.kill_with_weapon.title"

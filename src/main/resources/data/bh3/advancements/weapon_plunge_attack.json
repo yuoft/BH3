@@ -2,7 +2,7 @@
   "parent": "bh3:kill_with_weapon",
   "display": {
     "icon": {
-      "item": "bh3:bh3_jm"
+      "item": "minecraft:golden_sword"
     },
     "title": {
       "translate": "advancements.bh3.weapon_plunge_attack.title"
@@ -13,7 +13,7 @@
     "frame": "goal"
   },
   "criteria": {
-    "plunge_attack": {
+    "weapon_plunge_attack": {
       "trigger": "minecraft:impossible"
     }
   }
