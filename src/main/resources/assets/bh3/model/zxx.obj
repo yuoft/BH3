@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zxx.mtl
-o ZXX
+o model
 v 0.291942 0.326199 0.739392
 v 0.282334 0.323259 0.733512
 v 0.286337 0.325785 0.733512

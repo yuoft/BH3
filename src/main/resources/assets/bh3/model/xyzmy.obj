@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib xyzmy.mtl
-o XYZMY
+o model
 v 0.736619 1.098196 0.750000
 v 0.729144 1.130843 0.763795
 v 0.729144 1.130843 0.736205

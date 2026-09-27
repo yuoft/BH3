@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib dzqlm.mtl
-o DZQLM
+o model
 v 0.618288 0.646181 0.741606
 v 0.609887 0.645299 0.733370
 v 0.604628 0.641534 0.733361

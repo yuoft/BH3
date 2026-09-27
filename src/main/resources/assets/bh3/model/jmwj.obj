@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib jmwj.mtl
-o JMWJ
+o model
 v 0.325026 0.298287 0.752319
 v 0.495079 0.468340 0.752376
 v 0.491177 0.472242 0.739073

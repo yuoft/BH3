@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib xszj.mtl
-o XSZJ
+o model
 v 0.894861 0.840464 0.768747
 v 0.903738 0.840760 0.771764
 v 0.894698 0.831222 0.769559

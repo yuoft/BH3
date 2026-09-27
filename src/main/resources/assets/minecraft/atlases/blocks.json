@@ -4,6 +4,11 @@
       "type": "minecraft:directory",
       "prefix": "weapon/",
       "source": "weapon"
+    },
+    {
+      "type": "minecraft:directory",
+      "prefix": "weapon2d/",
+      "source": "weapon2d"
     }
   ]
 }

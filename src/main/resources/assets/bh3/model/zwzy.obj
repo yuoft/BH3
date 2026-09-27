@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zwzy.mtl
-o ZWZY
+o model
 v 0.577831 0.918566 0.744563
 v 0.575940 0.920447 0.726111
 v 0.585518 0.910901 0.744563

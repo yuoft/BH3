@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib yjzhle.mtl
-o YJZHLE
+o model
 v 0.231183 0.258756 0.750000
 v 0.235221 0.254718 0.763788
 v 0.215915 0.246273 0.771466

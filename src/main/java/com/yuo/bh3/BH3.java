@@ -35,7 +35,7 @@ public class BH3 {
         proxy.registerHandlers();
 
         /*
-         * 使用无尽加载obj的方法加载武器模型
+         * 在gui里使用2d模型，从米游社百科下载。
          * 物理实体模型属性调整
          * 使用数据生成
          * 配方设计，成就系添加

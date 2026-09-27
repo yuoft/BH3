@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib syj.mtl
-o SYJ
+o model
 v 0.417812 0.539697 0.761166
 v 0.416561 0.532190 0.739920
 v 0.386419 0.524163 0.739920

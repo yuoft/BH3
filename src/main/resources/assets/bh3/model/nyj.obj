@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib nyj.mtl
-o NYJ
+o model
 v 0.612772 0.552105 0.717173
 v 0.595941 0.524064 0.717200
 v 0.607110 0.517286 0.743524

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib tjzj.mtl
-o TJZJ
+o model
 v 0.506996 0.540910 0.711317
 v 0.516611 0.532659 0.718195
 v 0.515185 0.542260 0.714794

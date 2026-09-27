@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib fld.mtl
-o FLD
+o model
 v 0.665193 0.719737 0.739986
 v 0.736598 0.801040 0.739986
 v 0.714972 0.821085 0.749922

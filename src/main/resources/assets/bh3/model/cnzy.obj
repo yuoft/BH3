@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib cnzy.mtl
-o CNZY
+o model
 v 0.590022 0.668912 0.731323
 v 0.590754 0.663825 0.729084
 v 0.587957 0.667519 0.729084

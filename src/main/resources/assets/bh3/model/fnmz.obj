@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib fnmz.mtl
-o FNMZ
+o model
 v 1.236314 1.235039 0.750000
 v 1.232724 1.231848 0.752511
 v 1.234309 1.228507 0.750000

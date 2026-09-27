@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib cnzj.mtl
-o CNZJ
+o model
 v 0.525075 0.721110 0.702300
 v 0.512829 0.705478 0.717009
 v 0.523808 0.703412 0.717009

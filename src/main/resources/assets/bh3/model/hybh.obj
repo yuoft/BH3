@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib hybh.mtl
-o HYBH
+o model
 v 0.109740 0.122315 0.727947
 v 0.116027 0.116027 0.739078
 v 0.105172 0.105172 0.731850

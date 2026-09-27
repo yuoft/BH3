@@ -91,6 +91,9 @@ dependencies {
 //    implementation fg.deobf("curse.maven:epic-fight-mod-405076:${epic_figh_id}")
     implementation fg.deobf("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
     implementation fg.deobf("curse.maven:avaritia-endless-624491:${ae_id}")
+    runtimeOnly fg.deobf("curse.maven:slashblade-resharped-1022428:${slashblade_id}")
+    runtimeOnly fg.deobf("curse.maven:betterf3-401648:${betterf3_id}")
+    runtimeOnly fg.deobf("curse.maven:cloth-config-348521:${cloth_config_id}")
 
     runtimeOnly fg.deobf("curse.maven:jade-324717:${jade_id}")
     runtimeOnly fg.deobf("vazkii.patchouli:Patchouli:${minecraft_version}-${patchouli_ver}")

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib hszs.mtl
-o HSZS
+o model
 v 1.089704 1.081990 0.757982
 v 1.120687 1.048739 0.757034
 v 1.084382 1.008104 0.759095

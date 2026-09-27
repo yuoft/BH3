@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zwzj.mtl
-o ZWZJ
+o model
 v 0.325361 0.547404 0.749803
 v 0.324076 0.556725 0.754088
 v 0.336670 0.561182 0.758972

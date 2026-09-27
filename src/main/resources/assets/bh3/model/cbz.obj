@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib cbz.mtl
-o CBZ
+o model
 v 1.427029 1.364533 0.765440
 v 1.244436 1.193876 0.765440
 v 1.187156 1.251156 0.765440

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zydatjn.mtl
-o ZYDATJN
+o model
 v 0.871227 0.910460 0.793956
 v 0.850749 0.850749 0.839312
 v 0.829467 0.878807 0.803087

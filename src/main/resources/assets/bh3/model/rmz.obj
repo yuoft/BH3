@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib rmz.mtl
-o RMZ
+o model
 v 0.347215 0.331721 0.714207
 v 0.364249 0.345751 0.713818
 v 0.349903 0.350787 0.707111

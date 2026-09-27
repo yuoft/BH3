@@ -1,9 +1,12 @@
 package com.yuo.bh3.Items;
 
+import com.yuo.bh3.Client.WeaponTESR;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.PlacedWeaponEntity;
 import com.yuo.bh3.Entity.WeaponArrowEntity;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -16,11 +19,13 @@ import net.minecraft.world.entity.projectile.AbstractArrow.Pickup;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.event.ForgeEventFactory;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 /**
@@ -157,5 +162,24 @@ public class BH3WeaponBow extends BowItem {
                 return player.isCreative() ? new ItemStack(Items.ARROW) : ItemStack.EMPTY;
             }
         }
+    }
+
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private BlockEntityWithoutLevelRenderer renderer;
+
+            @Override
+            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                if (renderer == null) {
+                    Minecraft mc = Minecraft.getInstance();
+                    renderer = new WeaponTESR(
+                            mc.getBlockEntityRenderDispatcher(),
+                            mc.getEntityModels()
+                    );
+                }
+                return renderer;
+            }
+        });
     }
 }

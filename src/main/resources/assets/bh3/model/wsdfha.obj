@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib wsdfha.mtl
-o WSDFHA
+o model
 v 0.304959 0.264847 0.701982
 v 0.332465 0.271978 0.701800
 v 0.320966 0.304627 0.708745

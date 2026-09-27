@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib fnmzc.mtl
-o FNMZC
+o model
 v 0.117862 0.093488 0.760650
 v 0.093363 0.057300 0.750000
 v 0.089446 0.061217 0.763375

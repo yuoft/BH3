@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib axyw.mtl
-o AXYW
+o model
 v 0.939415 0.870808 0.515957
 v 0.941938 0.841754 0.520483
 v 0.952422 0.859177 0.546494

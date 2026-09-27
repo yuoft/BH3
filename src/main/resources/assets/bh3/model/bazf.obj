@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib bazf.mtl
-o BAZF
+o model
 v -0.115855 -0.154968 0.750000
 v -0.044654 -0.124450 0.750000
 v -0.054825 -0.114279 0.725086

@@ -1,6 +1,0 @@
-{
-  "parent": "bh3:item/bh3_sickle",
-  "loader": "forge:obj",
-  "model": "bh3:model/axyw.obj",
-  "flip-v": true
-}

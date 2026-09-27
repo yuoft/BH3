@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zcb.mtl
-o ZCB
+o model
 v 1.327985 1.469853 0.757265
 v 1.329778 1.494995 0.750000
 v 1.339273 1.499065 0.750000

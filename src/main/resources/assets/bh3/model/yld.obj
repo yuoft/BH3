@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib yld.mtl
-o YLD
+o model
 v 0.568727 0.582571 0.761891
 v 0.549314 0.568830 0.764798
 v 0.549898 0.593478 0.769134

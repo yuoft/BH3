@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib syz.mtl
-o SYZ
+o model
 v 0.856372 1.095613 0.783026
 v 0.861721 1.084415 0.783026
 v 0.860861 1.083555 0.787583

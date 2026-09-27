@@ -1,6 +1,7 @@
 package com.yuo.bh3.Items;
 
-import com.yuo.bh3.Client.BH3ItemRender;
+import com.yuo.bh3.Client.WeaponTESR;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
@@ -11,13 +12,4 @@ public class FLD extends BH3WeaponSword{
         super(wa);
     }
 
-    @Override
-    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
-        consumer.accept(new IClientItemExtensions() {
-            @Override
-            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
-                return new BH3ItemRender();
-            }
-        });
-    }
 }

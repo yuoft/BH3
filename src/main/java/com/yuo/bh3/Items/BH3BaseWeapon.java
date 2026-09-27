@@ -1,8 +1,11 @@
 package com.yuo.bh3.Items;
 
+import com.yuo.bh3.Client.WeaponTESR;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.PlacedWeaponEntity;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -10,9 +13,11 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.function.Consumer;
 
 /**
  * 使用obj模组的崩坏三武器
@@ -59,5 +64,25 @@ public class BH3BaseWeapon extends SwordItem {
             }
         }
         return true;
+    }
+
+    //自定义物品渲染 物品实体渲染
+    @Override
+    public void initializeClient(Consumer<IClientItemExtensions> consumer) {
+        consumer.accept(new IClientItemExtensions() {
+            private BlockEntityWithoutLevelRenderer renderer;
+
+            @Override
+            public BlockEntityWithoutLevelRenderer getCustomRenderer() {
+                if (renderer == null) {
+                    Minecraft mc = Minecraft.getInstance();
+                    renderer = new WeaponTESR(
+                            mc.getBlockEntityRenderDispatcher(),
+                            mc.getEntityModels()
+                    );
+                }
+                return renderer;
+            }
+        });
     }
 }

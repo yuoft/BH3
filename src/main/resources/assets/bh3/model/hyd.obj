@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib hyd.mtl
-o HYD
+o model
 v 0.343003 0.268608 0.772617
 v 0.340295 0.270707 0.775519
 v 0.343230 0.286637 0.778248

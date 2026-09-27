@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib tszs.mtl
-o TSZS
+o model
 v 0.073070 0.023565 0.750000
 v 0.056120 0.000877 0.750000
 v 0.067514 -0.010517 0.723875

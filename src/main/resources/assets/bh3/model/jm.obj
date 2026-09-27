@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib jm.mtl
-o JM
+o model
 v 0.553714 0.574728 0.750000
 v 0.573409 0.578740 0.750000
 v 0.554764 0.573678 0.755545

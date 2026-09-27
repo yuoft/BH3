@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib mfxx.mtl
-o MFXX
+o model
 v 0.817097 0.819625 0.788987
 v 0.811961 0.793094 0.777645
 v 0.831505 0.825987 0.780351

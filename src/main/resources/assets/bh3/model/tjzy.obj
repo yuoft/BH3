@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib tjzy.mtl
-o TJZY
+o model
 v 0.296420 0.284110 0.715312
 v 0.297316 0.287808 0.713861
 v 0.286701 0.285350 0.717258

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib zydhg.mtl
-o ZYDHG
+o model
 v 0.661499 0.645114 0.890027
 v 0.665924 0.657537 0.894843
 v 0.673828 0.646400 0.878042

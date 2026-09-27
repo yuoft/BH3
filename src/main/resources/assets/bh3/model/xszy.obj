@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib xszy.mtl
-o XSZY
+o model
 v 0.859872 1.230955 0.737919
 v 0.800921 1.224411 0.737919
 v 0.828666 1.180236 0.737919

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib bax.mtl
-o BAX
+o model
 v 0.149997 0.138149 0.513002
 v 0.143496 0.144650 0.509193
 v 0.542360 0.543514 0.509194

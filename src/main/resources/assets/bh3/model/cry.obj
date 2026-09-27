@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib cry.mtl
-o CRY
+o model
 v 0.351112 0.245852 0.751429
 v 0.352780 0.247643 0.751682
 v 0.360193 0.242969 0.750000

@@ -1,7 +1,7 @@
 # Blender 4.2.0
 # www.blender.org
 mtllib yyqwx.mtl
-o YYQWX
+o model
 v 0.609565 0.551876 0.762234
 v 0.596519 0.551757 0.757372
 v 0.605983 0.546323 0.763250
