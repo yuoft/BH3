@@ -2,7 +2,6 @@ package com.yuo.bh3;
 
 import com.yuo.bh3.Blocks.BH3Blocks;
 import com.yuo.bh3.Entity.BH3EntityTypes;
-import com.yuo.bh3.Event.NetWorkHandler;
 import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.Proxy.ClientProxy;
 import com.yuo.bh3.Proxy.CommonProxy;
@@ -12,7 +11,6 @@ import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod("bh3")
@@ -23,7 +21,6 @@ public class BH3 {
     public BH3() {
         final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.SERVER_CONFIG); //配置文件
-        modEventBus.addListener(this::commonSetup);
 
 		//注册至mod总线
         BH3Items.ITEMS.register(modEventBus);
@@ -32,7 +29,7 @@ public class BH3 {
         SoundRegistry.SOUNDS.register(modEventBus);
         BH3EntityTypes.ENTITY_TYPES.register(modEventBus);
 
-        proxy.registerHandlers();
+        proxy.registerHandlers(modEventBus);
 
         /*
          * 在gui里使用2d模型，从米游社百科下载。
@@ -44,9 +41,5 @@ public class BH3 {
          * 更多内容
          */
 
-    }
-
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(NetWorkHandler::registerMessage); //创建数据包
     }
 }

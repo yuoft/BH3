@@ -2,7 +2,6 @@ package com.yuo.bh3.Entity;
 
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.ModUtils;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.registries.DeferredRegister;
@@ -23,7 +22,7 @@ public class BH3EntityTypes {
 
     //箭
     public static final RegistryObject<EntityType<WeaponArrowEntity>> WEAPON_ARROW = ENTITY_TYPES.register("weapon_arrow",
-            () -> EntityType.Builder.<WeaponArrowEntity>of(WeaponArrowEntity::new, MobCategory.MISC)
+            () -> EntityType.Builder.<WeaponArrowEntity>of((type, world) -> new WeaponArrowEntity(world), MobCategory.MISC)
                     .sized(0.5f, 0.5F).build("weapon_arrow"));
 
 

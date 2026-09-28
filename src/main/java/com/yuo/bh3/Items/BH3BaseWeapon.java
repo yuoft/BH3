@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 /**
- * 使用obj模组的崩坏三武器
+ * 使用obj模型的崩坏三武器
  * @author yuo
  */
 public class BH3BaseWeapon extends SwordItem {

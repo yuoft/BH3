@@ -1,7 +1,7 @@
 package com.yuo.bh3.Data;
 
-import com.yuo.bh3.Client.WeaponDisplays;
-import com.yuo.bh3.Client.WeaponDisplays.TransformParams;
+import com.yuo.bh3.Client.WeaponTransformHelper;
+import com.yuo.bh3.Client.WeaponTransformHelper.TransformParams;
 import com.yuo.bh3.Items.*;
 import com.yuo.bh3.ModUtils;
 import net.minecraft.client.renderer.block.model.BlockModel.GuiLight;
@@ -10,7 +10,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
@@ -83,8 +82,8 @@ public class ModItemModelProvider extends ItemModelProvider {
                 .parent(new ModelFile.UncheckedModelFile("builtin/entity"))
                 .guiLight(GuiLight.FRONT);
 
-        TransformParams p = WeaponDisplays.TRANSFORMS.getOrDefault(type, WeaponDisplays.TRANSFORMS.get("sword"));
-        WeaponDisplays.applyTransforms(builder, p);
+        TransformParams p = WeaponTransformHelper.TRANSFORMS.getOrDefault(type, WeaponTransformHelper.TRANSFORMS.get("sword"));
+        WeaponTransformHelper.applyTransforms(builder, p);
     }
 
     public void weaponIconItemModel(ResourceLocation item){

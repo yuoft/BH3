@@ -5,7 +5,6 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.item.ItemStack;
@@ -19,19 +18,19 @@ import net.minecraftforge.network.NetworkHooks;
 
 public class WeaponArrowEntity extends AbstractArrow {
 
-    public WeaponArrowEntity(EntityType<? extends AbstractArrow> type, Level world) {
+    public WeaponArrowEntity(Level world) {
         super(BH3EntityTypes.WEAPON_ARROW.get(), world);
         this.setBaseDamage(5);
     }
 
-    public WeaponArrowEntity(EntityType<? extends AbstractArrow> type, double x, double y, double z, Level world) {
+    public WeaponArrowEntity(float damage, double x, double y, double z, Level world) {
         super(BH3EntityTypes.WEAPON_ARROW.get(), x, y, z,world);
-        this.setBaseDamage(5);
+        this.setBaseDamage(damage);
     }
 
-    public WeaponArrowEntity(EntityType<? extends AbstractArrow> type, LivingEntity shooter, Level world) {
-        super(type, world);
-        this.setBaseDamage(5);
+    public WeaponArrowEntity(float damage, LivingEntity shooter, Level world) {
+        super(BH3EntityTypes.WEAPON_ARROW.get(), world);
+        this.setBaseDamage(damage);
     }
 
     @Override

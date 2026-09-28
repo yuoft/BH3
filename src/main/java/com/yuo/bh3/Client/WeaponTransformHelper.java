@@ -7,7 +7,7 @@ import net.minecraftforge.client.model.generators.ModelBuilder;
 import java.util.HashMap;
 import java.util.Map;
 
-public final class WeaponDisplays {
+public final class WeaponTransformHelper {
 
     public static final Map<String, TransformParams> TRANSFORMS = new HashMap<>();
 
@@ -19,7 +19,7 @@ public final class WeaponDisplays {
                 // 第三人称左手
                 -30,  90, 0, 3.5f, 0f, 3f, 1.25f,
                 // 第一人称右手
-                -30, -90, 0, 3.5f, 0.5f, 0.5f, 0.75f,
+                -30, -90, 0, 3f, 0.5f, 0.5f, 0.75f,
                 // 第一人称左手
                 -30,  90, 0, 3.5f, 0.5f, 0.5f, 0.75f
         ));
@@ -28,7 +28,7 @@ public final class WeaponDisplays {
         TRANSFORMS.put("big_sword", new TransformParams(
                 -30, -90, 0, 3.5f, 0.5f, 3f, 1.25f,
                 -30,  90, 0, 3.5f, 0.5f, 3f, 1.25f,
-                -30, -90, 0, 3.5f, 0.5f, 0.5f, 0.75f,
+                -30, -90, 0, 3f, 0.5f, 0.5f, 0.75f,
                 -30,  90, 0, 3.5f, 0.5f, 0.5f, 0.75f
         ));
 
@@ -44,8 +44,8 @@ public final class WeaponDisplays {
         TRANSFORMS.put("lance", new TransformParams(
                 -30, -90, 0, 3.75f, 6f, 4f, 1.25f,
                 -30,  90, 0, 3.75f, 6f, 4f, 1.25f,
-                -30, -90, 0, 3.75f, 0.5f, 0.5f, 0.75f,
-                -30,  90, 0, 3.75f, 0.5f, 0.5f, 0.75f
+                -30, -90, 0, 3f, 0.5f, 0.5f, 0.75f,
+                -30,  90, 0, 3f, 0.5f, 0.5f, 0.75f
         ));
 
         // sickle
@@ -57,7 +57,7 @@ public final class WeaponDisplays {
         ));
     }
 
-    private WeaponDisplays() {
+    private WeaponTransformHelper() {
     }
 
     /** 查表，没匹配到回退到 sword */

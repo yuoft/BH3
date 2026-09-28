@@ -12,6 +12,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.util.Mth;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.AbstractArrow;
@@ -32,15 +33,20 @@ import java.util.function.Predicate;
  * 弓
  */
 public class BH3WeaponBow extends BowItem {
-    private final int damage;
+    private final float damage;
     private final float damageSpeed;
     private final WeaponAttributes attributes;
 
     public BH3WeaponBow(WeaponAttributes wa) {
-        super(new Properties().stacksTo(1).fireResistant());
-        this.damage = wa.getDamage();
+        super(new Properties().stacksTo(1).fireResistant().durability(wa.getDurability()));
+        this.damage = wa.getBowDamage();
         this.damageSpeed = wa.getDamageSpeed();
         this.attributes = wa;
+    }
+
+    @Override
+    public int getUseDuration(ItemStack stack) {
+        return 7200 - Mth.floor(( 4.0f + damageSpeed) * 1000);
     }
 
     @Override
@@ -77,7 +83,6 @@ public class BH3WeaponBow extends BowItem {
         return true;
     }
 
-
     @Override
     public void releaseUsing(ItemStack stack, Level worldIn, LivingEntity entityLiving, int timeLeft) {
         if (entityLiving instanceof Player player) {
@@ -95,11 +100,10 @@ public class BH3WeaponBow extends BowItem {
 
                 boolean flag1 = player.isCreative() || (itemstack.getItem() instanceof ArrowItem && ((ArrowItem) itemstack.getItem()).isInfinite(itemstack, stack, player));
                 if (!worldIn.isClientSide) {
-                    AbstractArrow arrow = new WeaponArrowEntity(BH3EntityTypes.WEAPON_ARROW.get(), player.getX(), player.getEyeY(), player.getZ(), worldIn);
-//						arrow = customArrow(arrow);
+                    AbstractArrow arrow = new WeaponArrowEntity(damage, player.getX(), player.getEyeY(), player.getZ(), worldIn);
+                    arrow.setOwner(player);
                     arrow.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, 3.0F, 1.0F);
                     arrow.setCritArrow(true);
-//						arrow.setNoPhysics(true);
 
                     int j = stack.getEnchantmentLevel(Enchantments.POWER_ARROWS);
                     if (j > 0) {
@@ -138,7 +142,7 @@ public class BH3WeaponBow extends BowItem {
         }
     }
 
-    public int getDamage() {
+    public float getDamage() {
         return damage;
     }
 
