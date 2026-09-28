@@ -1,15 +1,17 @@
 package com.yuo.bh3.Data;
 
-import com.yuo.bh3.Items.BH3BaseWeapon;
-import com.yuo.bh3.Items.BH3Items;
-import com.yuo.bh3.Items.BH3MusicDisc;
-import com.yuo.bh3.Items.BH3WeaponBow;
+import com.yuo.bh3.Client.WeaponDisplays;
+import com.yuo.bh3.Client.WeaponDisplays.TransformParams;
+import com.yuo.bh3.Items.*;
 import com.yuo.bh3.ModUtils;
+import net.minecraft.client.renderer.block.model.BlockModel.GuiLight;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemDisplayContext;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -31,7 +33,14 @@ public class ModItemModelProvider extends ItemModelProvider {
             }
 
             if (item instanceof BH3BaseWeapon || item instanceof BH3WeaponBow){
-                this.weaponItemModel(getRes(item));
+                String type = "";
+                if (item instanceof BH3WeaponSword) type = "sword";
+                else if (item instanceof BH3WeaponBigSword) type = "bigsword";
+                else if (item instanceof BH3WeaponLance) type = "lance";
+                else if (item instanceof BH3WeaponSickle) type = "sickle";
+                else type = "bow";
+                this.weaponItemModel(getRes(item), type);
+                this.weaponIconItemModel(getRes(item));
             }else if (item instanceof BH3MusicDisc){
                 this.discItemModel(getRes(item));
             }else this.basicItem(item);
@@ -43,8 +52,43 @@ public class ModItemModelProvider extends ItemModelProvider {
         return Objects.requireNonNull(BuiltInRegistries.ITEM.getKey(item));
     }
 
-    public void weaponItemModel(ResourceLocation item){
-        this.getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("item/generated"))
+//    public void weaponItemModel(ResourceLocation item){
+//        this.getBuilder(item.toString()).parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+//                .guiLight(GuiLight.FRONT).transforms()
+//                .transform(ItemDisplayContext.THIRD_PERSON_RIGHT_HAND)
+//                .rotation(-30, -90, 0) //x：左右 y：前后 z：上下
+//                .translation(4f, 0f, 3f)
+//                .scale(1f)
+//                .end()
+//                .transform(ItemDisplayContext.FIRST_PERSON_RIGHT_HAND)
+//                .rotation(-30, -90, 0)
+//                .translation(4f, 0.5f, 0.5f)
+//                .scale(0.85f)
+//                .end()
+//                .transform(ItemDisplayContext.THIRD_PERSON_LEFT_HAND)
+//                .rotation(-30, 90, 0)
+//                .translation(4f, 0f, 3f)
+//                .scale(1f)
+//                .end()
+//                .transform(ItemDisplayContext.FIRST_PERSON_LEFT_HAND)
+//                .rotation(-30, 90, 0)
+//                .translation(4f, 0.5f, 0.5f)
+//                .scale(0.85f)
+//                .end()
+//                .end();
+//    }
+
+    public void weaponItemModel(ResourceLocation item, String type) {
+        ItemModelBuilder builder = this.getBuilder(item.toString())
+                .parent(new ModelFile.UncheckedModelFile("builtin/entity"))
+                .guiLight(GuiLight.FRONT);
+
+        TransformParams p = WeaponDisplays.TRANSFORMS.getOrDefault(type, WeaponDisplays.TRANSFORMS.get("sword"));
+        WeaponDisplays.applyTransforms(builder, p);
+    }
+
+    public void weaponIconItemModel(ResourceLocation item){
+        this.getBuilder(item.toString() + "_icon").parent(new ModelFile.UncheckedModelFile("item/generated"))
                 .texture("layer0", ModUtils.fa("weapon2d/" + getId(item, "bh3_")));
     }
 

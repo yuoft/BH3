@@ -14,7 +14,7 @@ import java.util.List;
 public class BH3WeaponBigSword extends BH3BaseWeapon {
 
 	public BH3WeaponBigSword(WeaponAttributes wa) {
-		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed());
+		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed(), wa);
 	}
 
 	@Override

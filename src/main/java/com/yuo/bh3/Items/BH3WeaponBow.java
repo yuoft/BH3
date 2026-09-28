@@ -34,13 +34,19 @@ import java.util.function.Predicate;
 public class BH3WeaponBow extends BowItem {
     private final int damage;
     private final float damageSpeed;
+    private final WeaponAttributes attributes;
 
     public BH3WeaponBow(WeaponAttributes wa) {
-        super(new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
+        super(new Properties().stacksTo(1).fireResistant());
         this.damage = wa.getDamage();
         this.damageSpeed = wa.getDamageSpeed();
+        this.attributes = wa;
     }
 
+    @Override
+    public Rarity getRarity(ItemStack stack) {
+        return attributes.getWeaponLevel() == 5 ? Rarity.EPIC : Rarity.create("bh3:weapon", ChatFormatting.GOLD);
+    }
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level level, List<Component> components, TooltipFlag flag) {
 		components.add(Component.translatable("bh3.tips.weapon_type_bow"));

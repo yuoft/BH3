@@ -14,7 +14,7 @@ import java.util.List;
 public class BH3WeaponSickle extends BH3BaseWeapon {
 
 	public BH3WeaponSickle(WeaponAttributes wa) {
-		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed());
+		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed(), wa);
 	}
 
 	@Override

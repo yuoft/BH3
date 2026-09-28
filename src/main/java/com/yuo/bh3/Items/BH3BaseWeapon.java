@@ -24,9 +24,15 @@ import java.util.function.Consumer;
  * @author yuo
  */
 public class BH3BaseWeapon extends SwordItem {
+    private final WeaponAttributes attributes;
+    public BH3BaseWeapon(Tier tier, int damage, float speed, WeaponAttributes attributes) {
+        super(tier, damage, speed, new Properties().stacksTo(1).fireResistant());
+        this.attributes = attributes;
+    }
 
-    public BH3BaseWeapon(Tier tier, int damage, float speed) {
-        super(tier, damage, speed, new Properties().stacksTo(1).fireResistant().rarity(Rarity.create("bh3:weapon", ChatFormatting.GOLD)));
+    @Override
+    public Rarity getRarity(ItemStack stack) {
+        return attributes.getWeaponLevel() == 5 ? Rarity.EPIC : Rarity.create("bh3:weapon", ChatFormatting.GOLD);
     }
 
     @Override

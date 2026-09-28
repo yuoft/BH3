@@ -2,6 +2,7 @@ package com.yuo.bh3.Client;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import com.yuo.bh3.Items.*;
 import com.yuo.bh3.ModUtils;
 import com.yuo.endless.client.lib.CCModel;
 import com.yuo.endless.client.lib.CCRenderState;
@@ -17,6 +18,7 @@ import net.minecraft.client.renderer.entity.ItemRenderer;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.client.resources.model.ModelResourceLocation;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemDisplayContext;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -41,16 +43,15 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
 
     @Override
     public void renderByItem(ItemStack stack, ItemDisplayContext ctx, PoseStack poseStack, MultiBufferSource buffer, int light, int overlay) {
-        if (ctx == ItemDisplayContext.GUI || ctx == ItemDisplayContext.FIXED || ctx == ItemDisplayContext.GROUND) {
+        if (ctx == ItemDisplayContext.GUI || ctx == ItemDisplayContext.FIXED) {
             renderIcon(stack, ctx, poseStack, buffer, light, overlay);
-            return;
-        }
-
-        poseStack.pushPose();
-        try {
-            renderModel(poseStack, buffer, ctx, stack, light, SCALE_DEFAULT);
-        } finally {
-            poseStack.popPose();
+        }else {
+            poseStack.pushPose();
+            try {
+                renderModel(poseStack, buffer, ctx, stack, light, SCALE_DEFAULT);
+            } finally {
+                poseStack.popPose();
+            }
         }
     }
 
@@ -61,6 +62,23 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
         CCModel model = getWeaponModel(stack);
         if (model == null) return;
 
+//        boolean leftHand = (idc == ItemDisplayContext.THIRD_PERSON_LEFT_HAND
+//                || idc == ItemDisplayContext.FIRST_PERSON_LEFT_HAND);
+//        if (idc != ItemDisplayContext.GROUND){
+//            Item item = stack.getItem();
+//            ItemTransformHelper.apply(poseStack, idc);
+//            if (item instanceof BH3WeaponSword){
+//                WeaponDisplays.get("sword").get(idc).apply(poseStack, leftHand);
+//            }else if (item instanceof BH3WeaponBigSword){
+//                WeaponDisplays.get("big_sword").get(idc).apply(poseStack, leftHand);
+//            }else if (item instanceof BH3WeaponLance){
+//                WeaponDisplays.get("lance").get(idc).apply(poseStack, leftHand);
+//            }else if (item instanceof BH3WeaponSickle){
+//                WeaponDisplays.get("sickle").get(idc).apply(poseStack, leftHand);
+//            }else if (item instanceof BH3WeaponBow){
+//                WeaponDisplays.get("bow").get(idc).apply(poseStack, leftHand);
+//            }
+//        }
         poseStack.scale(scale, scale, scale);
         ResourceLocation res = ModUtils.fa("textures/weapon/" + getItemID(stack) + ".png");
         RenderType renderType = BH3RenderTypes.weapon(res);

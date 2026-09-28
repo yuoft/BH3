@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class BH3WeaponSword extends BH3BaseWeapon {
 	public BH3WeaponSword(WeaponAttributes wa) {
-		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed());
+		super(wa.getTier(), wa.getDamage(), wa.getDamageSpeed(), wa);
 	}
 
 	@Override
