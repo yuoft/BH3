@@ -64,7 +64,7 @@ public class BH3BaseWeapon extends SwordItem {
                 level.addFreshEntity(weaponEntity);
 
                 stack.shrink(1);
-                level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 1.0F);
+                level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 3.0F);
                 // 返回 false 取消原掉落物生成
                 return false;
             }

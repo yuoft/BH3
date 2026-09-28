@@ -76,7 +76,7 @@ public class BH3WeaponBow extends BowItem {
                 level.addFreshEntity(weaponEntity);
 
                 stack.shrink(1);
-                level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 1.0F);
+                level.playSound(null, weaponEntity.getX(), weaponEntity.getY(), weaponEntity.getZ(), SoundEvents.PLAYER_ATTACK_WEAK, SoundSource.PLAYERS, 1.0F, 3.0F);
                 return false;
             }
         }

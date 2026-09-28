@@ -29,21 +29,22 @@ public class PlacedWeaponRenderer extends EntityRenderer<PlacedWeaponEntity> {
 
         poseStack.pushPose();
 
-        // 1. 基础位置（由实体位置决定）
-        // 2. 旋转：让武器竖直（剑尖朝下）
+        // 1. 姿势变换（先添加 → 后作用于顶点）
         poseStack.mulPose(Axis.ZP.rotationDegrees(-135));
         poseStack.mulPose(Axis.XP.rotationDegrees(0));
-//        poseStack.mulPose(Axis.YP.rotationDegrees(entity.getYRot()));
+        poseStack.translate(-0.75, -0.75, -0.25);
 
-        // 3. 微调位置使剑尖着地（根据模型偏移）
-        poseStack.translate(-0.75, -0.75, -0.25); // 向下偏移，数值需根据模型实际高度调整
+// 2. 自旋：最后添加 → 最先作用于顶点 → 绕模型中心
+        float ticksAlive = entity.tickCount + partialTick;
+        if (ticksAlive < 20) {
+            float progress = ticksAlive / 20f;
+            float eased = 1f - (float) Math.pow(1f - progress, 3);
+            float angle = eased * 720;
+            poseStack.mulPose(Axis.ZP.rotationDegrees(angle));
+        }
 
-        // 4. 如果需要缩放，可在此时应用
-
-        // 5. 获取模型并渲染（直接从ItemStack获取，自动使用OBJ模型）
+// 3. 渲染
         BakedModel model = itemRenderer.getModel(stack, entity.level(), null, 0);
-
-        // 使用ItemRenderer渲染，它会自动应用模型的变换
         itemRenderer.render(stack, ItemDisplayContext.GROUND, false, poseStack, buffer,
                 packedLight, OverlayTexture.NO_OVERLAY, model);
 
