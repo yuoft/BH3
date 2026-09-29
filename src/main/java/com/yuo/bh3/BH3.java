@@ -32,9 +32,6 @@ public class BH3 {
         proxy.registerHandlers(modEventBus);
 
         /*
-         * 在gui里使用2d模型，从米游社百科下载。
-         * 物理实体模型属性调整
-         * 使用数据生成
          * 配方设计，成就系添加
          * 武器等级（超限和普通？）+合成路径+升阶仪式+数值调整
          * 武器技能+特效（刀光可参考星海的mod）

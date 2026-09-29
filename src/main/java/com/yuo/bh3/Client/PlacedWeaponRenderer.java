@@ -29,12 +29,12 @@ public class PlacedWeaponRenderer extends EntityRenderer<PlacedWeaponEntity> {
 
         poseStack.pushPose();
 
-        // 1. 姿势变换（先添加 → 后作用于顶点）
+        //调整为剑尖向下
         poseStack.mulPose(Axis.ZP.rotationDegrees(-135));
         poseStack.mulPose(Axis.XP.rotationDegrees(0));
         poseStack.translate(-0.75, -0.75, -0.25);
 
-// 2. 自旋：最后添加 → 最先作用于顶点 → 绕模型中心
+        //绕模型中心旋转
         float ticksAlive = entity.tickCount + partialTick;
         if (ticksAlive < 20) {
             float progress = ticksAlive / 20f;
@@ -43,10 +43,8 @@ public class PlacedWeaponRenderer extends EntityRenderer<PlacedWeaponEntity> {
             poseStack.mulPose(Axis.ZP.rotationDegrees(angle));
         }
 
-// 3. 渲染
         BakedModel model = itemRenderer.getModel(stack, entity.level(), null, 0);
-        itemRenderer.render(stack, ItemDisplayContext.GROUND, false, poseStack, buffer,
-                packedLight, OverlayTexture.NO_OVERLAY, model);
+        itemRenderer.render(stack, ItemDisplayContext.GROUND, false, poseStack, buffer, packedLight, OverlayTexture.NO_OVERLAY, model);
 
         poseStack.popPose();
         super.render(entity, entityYaw, partialTick, poseStack, buffer, packedLight);
