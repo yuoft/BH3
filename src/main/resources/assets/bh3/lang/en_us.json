@@ -179,6 +179,9 @@
 	"bh3.tips.weapon_type_sickle": "§cSickle",
 	"bh3.tips.weapon_type_bow": "§cBow",
 
+	"bh3.tips.no_honkai_energy": "No Honkai Energy!",
+	"bh3.hud.honkai_energy": "Honkai Energy",
+
 	"bh3.tips.recovery_needle": "The scientific research team of Tianming analyzed the principle of necromancy and developed a drug that can inject a small amount of controlled catabolic energy into the human body, instantly reviving limbs that have stopped functioning.",
 
 	"block.bh3.energy_ore": "Energy Ore",

@@ -178,6 +178,9 @@
 	"bh3.tips.weapon_type_lance": "§c骑枪",
 	"bh3.tips.weapon_type_sickle": "§c镰刀",
 	"bh3.tips.weapon_type_bow": "§c弓",
+	"bh3.tips.no_honkai_energy": "崩坏能不足！",
+
+	"bh3.hud.honkai_energy": "崩坏能",
 
 	"bh3.tips.recovery_needle": "天命的科研小组分析死士化原理时研制出的药剂,它可以向人体注入微量受控的崩坏能，即时复苏机能停止的肢体。",
 

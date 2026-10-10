@@ -1,7 +1,11 @@
 package com.yuo.bh3.Event;
 
 import com.yuo.bh3.BH3;
+import com.yuo.bh3.Blocks.BH3Blocks;
+import com.yuo.bh3.Blocks.EnergyOre;
 import com.yuo.bh3.Items.BH3Items;
+import com.yuo.bh3.capability.HonkaiEnergyProvider;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
@@ -11,8 +15,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
+import net.minecraftforge.event.level.BlockEvent.BreakEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.network.PacketDistributor;
@@ -22,6 +29,17 @@ import net.minecraftforge.network.PacketDistributor;
  */
 @Mod.EventBusSubscriber(modid = BH3.MOD_ID)
 public class EventHandler {
+
+    @SubscribeEvent
+    public static void onLivingDeath(BreakEvent event) {
+        Player player = event.getPlayer();
+        BlockPos pos = event.getPos();
+        LevelAccessor level = event.getLevel();
+        BlockState state = level.getBlockState(pos);
+        if (state.getBlock() instanceof EnergyOre){ //挖掘矿石增加能量
+            HonkaiEnergyProvider.get(player).ifPresent(h -> h.add(0.5f));
+        }
+    }
 
     //玩家登入
     @SubscribeEvent

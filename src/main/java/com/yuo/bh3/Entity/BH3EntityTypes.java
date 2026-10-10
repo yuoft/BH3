@@ -24,6 +24,9 @@ public class BH3EntityTypes {
     public static final RegistryObject<EntityType<WeaponArrowEntity>> WEAPON_ARROW = ENTITY_TYPES.register("weapon_arrow",
             () -> EntityType.Builder.<WeaponArrowEntity>of((type, world) -> new WeaponArrowEntity(world), MobCategory.MISC)
                     .sized(0.5f, 0.5F).build("weapon_arrow"));
+    public static final RegistryObject<EntityType<BigSwordEntity>> BIG_SWORD = ENTITY_TYPES.register("big_sword",
+            () -> EntityType.Builder.<BigSwordEntity>of((type, world) -> new BigSwordEntity(world), MobCategory.MISC)
+                    .sized(0.5f, 0.5F).build("big_sword"));
 
 
 }
