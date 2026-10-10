@@ -141,7 +141,7 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
     /**
      * 获取崩坏武器id
      */
-    private static String getItemID(ItemStack stack) {
+    public static String getItemID(ItemStack stack) {
         ResourceLocation key = ForgeRegistries.ITEMS.getKey(stack.getItem());
         if (key == null) return "";
         String path = key.getPath();
@@ -151,7 +151,7 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
     /**
      * 获取崩坏武器3d模型
      */
-    private CCModel getWeaponModel(ItemStack stack) {
+    public static CCModel getWeaponModel(ItemStack stack) {
         ResourceLocation obj = ModUtils.fa("model/" + getItemID(stack) + ".obj");
         return MODEL_CACHE.computeIfAbsent(obj, loc -> {
             CCModel m = new OBJParser(loc).parse().get("model");

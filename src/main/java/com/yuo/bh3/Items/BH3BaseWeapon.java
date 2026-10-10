@@ -3,11 +3,15 @@ package com.yuo.bh3.Items;
 import com.yuo.bh3.Client.WeaponTESR;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.PlacedWeaponEntity;
+import com.yuo.bh3.Items.skill.BigSwordSkill;
+import com.yuo.bh3.capability.HonkaiEnergyProvider;
+import com.yuo.bh3.capability.IHonkaiEnergy;
 import net.minecraft.ChatFormatting;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BlockEntityWithoutLevelRenderer;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.entity.player.Player;
@@ -17,6 +21,7 @@ import net.minecraftforge.client.extensions.common.IClientItemExtensions;
 
 import javax.annotation.Nullable;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 /**
@@ -90,5 +95,21 @@ public class BH3BaseWeapon extends SwordItem {
                 return renderer;
             }
         });
+    }
+
+    /**
+     * 崩坏能是否足够释放技能
+     */
+    public static boolean isSkillRun(Level level, Player player){
+        Optional<IHonkaiEnergy> honkaiEnergy = HonkaiEnergyProvider.get(player).resolve();
+        if (!level.isClientSide) {
+            if (honkaiEnergy.isPresent() && !honkaiEnergy.get().has(BigSwordSkill.HONKAI_COST)) {
+                if (player instanceof ServerPlayer sp) {
+                    sp.displayClientMessage(Component.translatable("bh3.tips.no_honkai_energy"), true);
+                }
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -1,6 +1,7 @@
 package com.yuo.bh3.Items;
 
 import com.yuo.bh3.Items.skill.SwordSkill;
+import com.yuo.bh3.capability.HonkaiEnergyProvider;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -32,9 +33,7 @@ public class BH3WeaponSword extends BH3BaseWeapon {
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (player.getCooldowns().isOnCooldown(this)) {
-			return InteractionResultHolder.fail(stack);
-		}
+		if (isSkillRun(level, player)) return InteractionResultHolder.fail(stack);
 
 		if (level.isClientSide) {
 			if (player instanceof LocalPlayer lp) {
@@ -43,10 +42,10 @@ public class BH3WeaponSword extends BH3BaseWeapon {
 		} else {
 			if (player instanceof ServerPlayer sp) {
 				SwordSkill.startServer(sp);
+				HonkaiEnergyProvider.get(player).ifPresent(h -> h.consume(SwordSkill.HONKAI_COST));
 			}
 		}
 
-		player.getCooldowns().addCooldown(this, 20);
 		player.swing(hand, true);   // 挥一下手臂
 		return InteractionResultHolder.success(stack);
 	}

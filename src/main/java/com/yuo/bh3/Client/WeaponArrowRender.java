@@ -1,5 +1,6 @@
-package com.yuo.bh3.Entity;
+package com.yuo.bh3.Client;
 
+import com.yuo.bh3.Entity.WeaponArrowEntity;
 import com.yuo.bh3.ModUtils;
 import net.minecraft.client.renderer.entity.ArrowRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
