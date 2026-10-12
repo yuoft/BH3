@@ -1,4 +1,4 @@
-package com.yuo.bh3.Event;
+package com.yuo.bh3.packet;
 
 import com.yuo.bh3.ModUtils;
 import net.minecraftforge.network.NetworkRegistry;
@@ -26,5 +26,10 @@ public class NetWorkHandler {
                 TotemPacket::toBytes,
                 TotemPacket::new,
                 TotemPacket::handler);
+        INSTANCE.registerMessage(nextID(),
+                SyncHonkaiEnergyPacket.class,
+                SyncHonkaiEnergyPacket::toBytes,
+                SyncHonkaiEnergyPacket::new,
+                SyncHonkaiEnergyPacket::handler);
     }
 }

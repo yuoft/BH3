@@ -1,6 +1,6 @@
 package com.yuo.bh3.Proxy;
 
-import com.yuo.bh3.Event.NetWorkHandler;
+import com.yuo.bh3.packet.NetWorkHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
@@ -12,6 +12,5 @@ public class CommonProxy implements IProxy {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(NetWorkHandler::registerMessage); //创建数据包
     }
 }

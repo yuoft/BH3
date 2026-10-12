@@ -2,6 +2,7 @@ package com.yuo.bh3.capability;
 
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.ModUtils;
+import com.yuo.bh3.packet.SyncHonkaiEnergyPacket;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.Entity;

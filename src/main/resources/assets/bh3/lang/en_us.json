@@ -185,9 +185,11 @@
 	"bh3.tips.recovery_needle": "The scientific research team of Tianming analyzed the principle of necromancy and developed a drug that can inject a small amount of controlled catabolic energy into the human body, instantly reviving limbs that have stopped functioning.",
 
 	"block.bh3.energy_ore": "Energy Ore",
+	"block.bh3.energy_deep_ore": "Deepslate Energy Ore",
 	"block.bh3.energy_end_ore": "End Energy Ore",
 	"block.bh3.energy_nether_ore": "Nether Energy Ore",
 	"block.bh3.crystal_ore": "Crystal Ore",
+	"block.bh3.crystal_deep_ore": "Deepslate Crystal Ore",
 
 	"entity.bh3.weapon_arrow": "Weapon Arrow",
 
@@ -217,6 +219,18 @@
 	"advancements.bh3.special_weapon.title.desc": "Obtain a legendary Divine Key weapon",
 	"advancements.bh3.collect_all_records.title": "Record Collector",
 	"advancements.bh3.collect_all_records.title.desc": "Collect all 24 Honkai Impact 3 records",
+
+	"commands.honkaienergy.info.get": "%s Honkai Energy: %.2f / %.2f (%.1f%%)",
+	"commands.honkaienergy.info.set": "Set %s's Honkai Energy to %.2f",
+	"commands.honkaienergy.info.add": "%s %s's Honkai Energy by %.2f, current: %.2f / %.2f",
+	"commands.honkaienergy.info.add0": "Increased",
+	"commands.honkaienergy.info.add1": "Decreased",
+	"commands.honkaienergy.info.max": "Set %s's Honkai Energy cap to %.2f, current: %.2f",
+	"commands.honkaienergy.get": "Honkai Energy Get Value",
+	"commands.honkaienergy.set": "Honkai Energy Set Value",
+	"commands.honkaienergy.add": "Honkai Energy Add Value",
+	"commands.honkaienergy.max": "Honkai Energy Set Max Value",
+
 
 	"bh3.message.login": "§bWelcome to play this module [Ore Crop], and give feedback§aClick here!",
 	"bh3.message.login0": "§ahttps://space.bilibili.com/21854371",

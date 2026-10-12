@@ -6,7 +6,7 @@ import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.Proxy.ClientProxy;
 import com.yuo.bh3.Proxy.CommonProxy;
 import com.yuo.bh3.Proxy.IProxy;
-import com.yuo.bh3.capability.SyncHonkaiEnergyPacket;
+import com.yuo.bh3.packet.NetWorkHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.ModLoadingContext;
@@ -29,7 +29,7 @@ public class BH3 {
         BH3Tabs.TABS.register(modEventBus);
         SoundRegistry.SOUNDS.register(modEventBus);
         BH3EntityTypes.ENTITY_TYPES.register(modEventBus);
-        SyncHonkaiEnergyPacket.register();
+        NetWorkHandler.registerMessage();
 
         proxy.registerHandlers(modEventBus);
 
@@ -38,6 +38,7 @@ public class BH3 {
          * 武器等级（超限和普通？）+合成路径+升阶仪式+数值调整
          * 武器技能+特效（刀光可参考星海的mod）
          * 崩坏能能量系统
+         * 矿物生成，物理实体调整，骑枪技能（掷出落地爆炸伤害加击飞方块），弓（一次射出大量箭矢或连续射出箭矢）
          */
 
     }

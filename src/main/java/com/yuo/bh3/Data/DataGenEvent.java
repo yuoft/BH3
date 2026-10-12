@@ -1,6 +1,7 @@
 package com.yuo.bh3.Data;
 
 import com.yuo.bh3.BH3;
+import com.yuo.bh3.Wrold.ModWorldGen;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -20,18 +21,10 @@ public class DataGenEvent {
         boolean b0 = event.includeClient();
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        ExistingFileHelper fileHelper = event.getExistingFileHelper();
-//        generator.addProvider(b, new ModDataRecipes(output));
-//        generator.addProvider(true, new ModLanguageProvider(output, Kaguya.MOD_ID, "en_us"));
-        generator.addProvider(b0, new ModItemModelProvider(output, BH3.MOD_ID, fileHelper));
         CompletableFuture<Provider> future = event.getLookupProvider();
-//        generator.addProvider(b, new DamageTypeInit(generator.getPackOutput(), future));
+        ExistingFileHelper fileHelper = event.getExistingFileHelper();
+        generator.addProvider(b, new ModWorldGen(output, future));
+        generator.addProvider(b0, new ModItemModelProvider(output, BH3.MOD_ID, fileHelper));
     }
 
-//    public static class DamageTypeInit extends DatapackBuiltinEntriesProvider {
-//
-//        public DamageTypeInit(PackOutput output, CompletableFuture<Provider> future) {
-//            super(output, future, DanmakuDamageTypes.DAMAGE_BUILDER, Set.of("minecraft", BH3.MOD_ID));
-//        }
-//    }
 }

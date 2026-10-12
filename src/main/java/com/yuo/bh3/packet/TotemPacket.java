@@ -1,4 +1,4 @@
-package com.yuo.bh3.Event;
+package com.yuo.bh3.packet;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.multiplayer.ClientLevel;

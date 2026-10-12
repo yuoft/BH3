@@ -17,6 +17,10 @@ public class ModUtils {
         return new ResourceLocation(path);
     }
 
+    public static ResourceLocation parse(String s){
+        return new ResourceLocation(s);
+    }
+
     public static ResourceLocation tayParse(String path) {
         try {
             return new ResourceLocation(path);

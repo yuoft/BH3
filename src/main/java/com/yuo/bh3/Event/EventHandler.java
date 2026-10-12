@@ -1,10 +1,11 @@
 package com.yuo.bh3.Event;
 
 import com.yuo.bh3.BH3;
-import com.yuo.bh3.Blocks.BH3Blocks;
 import com.yuo.bh3.Blocks.EnergyOre;
 import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.capability.HonkaiEnergyProvider;
+import com.yuo.bh3.packet.NetWorkHandler;
+import com.yuo.bh3.packet.TotemPacket;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;

@@ -23,38 +23,52 @@ public class OreFeatures {
     // 创建OreFeature对应的ResourceKey
     //
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENERGY = createKey("ore_energy");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENERGY_DEEP = createKey("ore_energy_deep");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENERGY_NETHER = createKey("ore_energy_nether");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_ENERGY_END = createKey("ore_energy_end");
     public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL = createKey("ore_crystal");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> ORE_CRYSTAL_DEEP = createKey("ore_crystal_deep");
 
-    //BootstapContext 是我们datagen的上下文，等会我们使用数据生成的时候说。
-    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> pContext) {
-        //  创建对应的tag，如果有多个就创建多个
-        RuleTest stoneOreReplaceRuleTest = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
-        RuleTest deepSlateOreReplaceRuleTest = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
-        RuleTest netherOreReplaceRuleTest = new BlockMatchTest(Blocks.NETHERRACK);
+    public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> ctx) {
+        RuleTest stoneOre = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
+        RuleTest deepslateOre = new TagMatchTest(BlockTags.DEEPSLATE_ORE_REPLACEABLES);
+        RuleTest netherrack = new BlockMatchTest(Blocks.NETHERRACK);
+        RuleTest endStone = new BlockMatchTest(Blocks.END_STONE);   // ★ 加末地
 
-        // 创建一个list
-        List<TargetBlockState> list0 = List.of(
-                OreConfiguration.target(stoneOreReplaceRuleTest, BH3Blocks.energyOre.get().defaultBlockState()),
-                OreConfiguration.target(deepSlateOreReplaceRuleTest, BH3Blocks.energyOre.get().defaultBlockState())
+        // 主世界能量矿
+        List<TargetBlockState> energyList = List.of(
+                OreConfiguration.target(stoneOre, BH3Blocks.energyOre.get().defaultBlockState())
         );
-        List<TargetBlockState> list1 = List.of(
-                OreConfiguration.target(stoneOreReplaceRuleTest, BH3Blocks.crystalOre.get().defaultBlockState()),
-                OreConfiguration.target(deepSlateOreReplaceRuleTest, BH3Blocks.crystalOre.get().defaultBlockState())
+        // 主世界能量矿
+        List<TargetBlockState> energyDeepList = List.of(
+                OreConfiguration.target(deepslateOre, BH3Blocks.energyDeepOre.get().defaultBlockState())
         );
-        List<TargetBlockState> list00 = List.of(
-                OreConfiguration.target(netherOreReplaceRuleTest, BH3Blocks.energyNetherOre.get().defaultBlockState())
-        );
-        List<TargetBlockState> list11 = List.of(
-                OreConfiguration.target(netherOreReplaceRuleTest, BH3Blocks.energyEndOre.get().defaultBlockState())
-        );
-        // 注册对应orefeature，使用listOreConfiguration，9 上文提到的size
-        FeatureUtils.register(pContext, ORE_ENERGY, Feature.ORE, new OreConfiguration(list0, 4));
-        FeatureUtils.register(pContext, ORE_ENERGY_NETHER, Feature.ORE, new OreConfiguration(list00, 5));
-        FeatureUtils.register(pContext, ORE_ENERGY_END, Feature.ORE, new OreConfiguration(list11, 5));
-        FeatureUtils.register(pContext, ORE_CRYSTAL, Feature.ORE, new OreConfiguration(list1, 10));
 
+        // 主世界水晶矿
+        List<TargetBlockState> crystalList = List.of(
+                OreConfiguration.target(stoneOre, BH3Blocks.crystalOre.get().defaultBlockState())
+        );
+        // 主世界水晶矿
+        List<TargetBlockState> crystalDeepList = List.of(
+                OreConfiguration.target(deepslateOre, BH3Blocks.crystalDeepOre.get().defaultBlockState())
+        );
+
+        // 下界能量矿
+        List<TargetBlockState> netherList = List.of(
+                OreConfiguration.target(netherrack, BH3Blocks.energyNetherOre.get().defaultBlockState())
+        );
+
+        // ★ 末地能量矿（用 END_STONE 替换）
+        List<TargetBlockState> endList = List.of(
+                OreConfiguration.target(endStone, BH3Blocks.energyEndOre.get().defaultBlockState())
+        );
+
+        FeatureUtils.register(ctx, ORE_ENERGY, Feature.ORE, new OreConfiguration(energyList, 4));  //每堆数量
+        FeatureUtils.register(ctx, ORE_ENERGY_DEEP, Feature.ORE, new OreConfiguration(energyDeepList, 5));
+        FeatureUtils.register(ctx, ORE_ENERGY_NETHER, Feature.ORE, new OreConfiguration(netherList, 4));
+        FeatureUtils.register(ctx, ORE_ENERGY_END, Feature.ORE, new OreConfiguration(endList, 5));
+        FeatureUtils.register(ctx, ORE_CRYSTAL, Feature.ORE, new OreConfiguration(crystalList, 8));
+        FeatureUtils.register(ctx, ORE_CRYSTAL_DEEP, Feature.ORE, new OreConfiguration(crystalDeepList, 10));
     }
     // 创建ResourceKey的方法
     public static ResourceKey<ConfiguredFeature<?, ?>> createKey(String pName) {

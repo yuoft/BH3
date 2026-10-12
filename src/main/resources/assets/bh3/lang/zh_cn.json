@@ -185,11 +185,15 @@
 	"bh3.tips.recovery_needle": "天命的科研小组分析死士化原理时研制出的药剂,它可以向人体注入微量受控的崩坏能，即时复苏机能停止的肢体。",
 
 	"block.bh3.energy_ore": "崩坏能矿石",
+	"block.bh3.energy_deep_ore": "深层崩坏能矿石",
 	"block.bh3.energy_end_ore": "末地崩坏能矿石",
 	"block.bh3.energy_nether_ore": "下界崩坏能矿石",
 	"block.bh3.crystal_ore": "水晶矿石",
+	"block.bh3.crystal_deep_ore": "深层水晶矿石",
 
 	"entity.bh3.weapon_arrow": "爱莉希雅箭矢",
+	"entity.bh3.big_sword": "大剑：%s",
+	"entity.bh3.sickle": "镰刀：%s",
 
 	"advancements.bh3.obtain_crystal.title": "第一颗水晶",
 	"advancements.bh3.obtain_crystal.title.desc": "在矿洞深处发现了闪耀的结晶",
@@ -217,6 +221,17 @@
 	"advancements.bh3.special_weapon.title.desc": "获得一把传说中的神之键武器",
 	"advancements.bh3.collect_all_records.title": "唱片收藏家",
 	"advancements.bh3.collect_all_records.title.desc": "集齐全部 24 张崩坏3唱片",
+
+	"commands.honkaienergy.info.get": "%s 崩坏能: %.2f / %.2f (%.1f%%)",
+	"commands.honkaienergy.info.set": "已将 %s 的崩坏能设为 %.2f",
+	"commands.honkaienergy.info.add": "%s %s 的崩坏能 %.2f，当前: %.2f / %.2f",
+	"commands.honkaienergy.info.add0": "增加",
+	"commands.honkaienergy.info.add1": "增少",
+	"commands.honkaienergy.info.max": "已将 %s 的崩坏能上限设为 %.2f，当前: %.2f",
+	"commands.honkaienergy.get": "查询崩坏能",
+	"commands.honkaienergy.set": "设置崩坏能",
+	"commands.honkaienergy.add": "增减崩坏能",
+	"commands.honkaienergy.max": "设置崩坏能上限",
 
 	"bh3.message.login": "§b欢迎游玩本模组[崩坏3]，问题反馈§a点击此处!",
 	"bh3.message.login0": "§ahttps://space.bilibili.com/21854371",
