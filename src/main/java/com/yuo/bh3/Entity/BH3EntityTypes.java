@@ -27,6 +27,10 @@ public class BH3EntityTypes {
     public static final RegistryObject<EntityType<BigSwordEntity>> BIG_SWORD = ENTITY_TYPES.register("big_sword",
             () -> EntityType.Builder.<BigSwordEntity>of((type, world) -> new BigSwordEntity(world), MobCategory.MISC)
                     .sized(0.5f, 0.5F).build("big_sword"));
+    public static final RegistryObject<EntityType<SickleEntity>> SICKLE = ENTITY_TYPES.register("sickle",
+            () -> EntityType.Builder.<SickleEntity>of(SickleEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).clientTrackingRange(64)
+                    .updateInterval(1).build("sickle"));
 
 
 }

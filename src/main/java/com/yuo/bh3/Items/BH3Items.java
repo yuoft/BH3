@@ -133,7 +133,9 @@ public class BH3Items {
 	public static final Item.Properties BLOCK_TAB = new Item.Properties();
 
 	public static RegistryObject<BlockItem> energyOre = ITEMS.register("energy_ore", () -> new BlockItem(BH3Blocks.energyOre.get(), BLOCK_TAB));
+	public static RegistryObject<BlockItem> energyDeepOre = ITEMS.register("energy_deep_ore", () -> new BlockItem(BH3Blocks.energyDeepOre.get(), BLOCK_TAB));
 	public static RegistryObject<BlockItem> energyEndOre = ITEMS.register("energy_end_ore", () -> new BlockItem(BH3Blocks.energyEndOre.get(), BLOCK_TAB));
 	public static RegistryObject<BlockItem> energyNetherOre = ITEMS.register("energy_nether_ore", () -> new BlockItem(BH3Blocks.energyNetherOre.get(), BLOCK_TAB));
 	public static RegistryObject<BlockItem> crystalOre = ITEMS.register("crystal_ore", () -> new BlockItem(BH3Blocks.crystalOre.get(), BLOCK_TAB));
+	public static RegistryObject<BlockItem> crystalDeepOre = ITEMS.register("crystal_deep_ore", () -> new BlockItem(BH3Blocks.crystalDeepOre.get(), BLOCK_TAB));
 }

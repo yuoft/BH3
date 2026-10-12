@@ -98,21 +98,20 @@ public class BH3BaseWeapon extends SwordItem {
     }
 
     /**
-     * 崩坏能是否足够释放技能
-     * @return true:能量不足
+     * 是否有足够消耗的崩坏能
+     * @return true 足够消耗
      */
-    public static boolean isSkillRun(Level level, Player player){
-        if (level.isClientSide) return true;
+    public static boolean isSkillEnergyRun(Level level, Player player, float cost) {
+        if (level.isClientSide) return false;
         Optional<IHonkaiEnergy> honkaiEnergy = HonkaiEnergyProvider.get(player).resolve();
         if (honkaiEnergy.isPresent()) {
-            if (honkaiEnergy.get().has(BigSwordSkill.HONKAI_COST)){
-                return false;
+            if (honkaiEnergy.get().has(cost)) {
+                return true;
             }
             if (player instanceof ServerPlayer sp) {
                 sp.displayClientMessage(Component.translatable("bh3.tips.no_honkai_energy"), true);
             }
-            return true;
         }
-        return true;
+        return false;
     }
 }

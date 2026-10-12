@@ -46,7 +46,7 @@ public class BH3WeaponBigSword extends BH3BaseWeapon {
 	@Override
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
-		if (isSkillRun(level, player)) return InteractionResultHolder.fail(stack);
+		if (!isSkillEnergyRun(level, player, BigSwordSkill.HONKAI_COST)) return InteractionResultHolder.fail(stack);
 
 		// 服务端生成实体
 		if (player instanceof ServerPlayer sp) {

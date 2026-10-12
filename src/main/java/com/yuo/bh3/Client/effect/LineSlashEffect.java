@@ -10,6 +10,7 @@ import com.mojang.blaze3d.vertex.Tesselator;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.blaze3d.vertex.VertexFormat;
 import com.mojang.math.Axis;
+import com.yuo.bh3.ModUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
 import net.minecraft.resources.ResourceLocation;
@@ -19,8 +20,7 @@ import org.joml.Matrix4f;
 public class LineSlashEffect {
 
     /** 复用同一张纹理，或换成直线型的也行 */
-    public static final ResourceLocation TEXTURE =
-            new ResourceLocation("bh3", "textures/effect/slash.png");
+    public static final ResourceLocation TEXTURE = ModUtils.fa("textures/effect/slash.png");
 
     // 位置
     public double x, y, z;

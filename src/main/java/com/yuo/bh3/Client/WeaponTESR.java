@@ -3,13 +3,13 @@ package com.yuo.bh3.Client;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import com.mojang.math.Axis;
+import com.yuo.bh3.Client.lib.CCModel;
+import com.yuo.bh3.Client.lib.CCRenderState;
+import com.yuo.bh3.Client.lib.OBJParser;
 import com.yuo.bh3.Items.BH3WeaponBigSword;
 import com.yuo.bh3.Items.BH3WeaponLance;
 import com.yuo.bh3.Items.BH3WeaponSickle;
 import com.yuo.bh3.ModUtils;
-import com.yuo.endless.client.lib.CCModel;
-import com.yuo.endless.client.lib.CCRenderState;
-import com.yuo.endless.client.lib.OBJParser;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
 import net.minecraft.client.player.LocalPlayer;
@@ -107,15 +107,22 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
      * 3D OBJ 渲染
      */
     private void renderModel(PoseStack poseStack, MultiBufferSource buffer, ItemDisplayContext idc, ItemStack stack, int light, float scale) {
-        CCModel model = getWeaponModel(stack);
-        if (model == null) return;
-
         poseStack.scale(scale, scale, scale);
-        ResourceLocation res = ModUtils.fa("textures/weapon/" + getItemID(stack) + ".png");
-        RenderType renderType = BH3RenderTypes.weapon(res);
+        renderModel(poseStack, buffer, light, stack);
+    }
+
+    /**
+     * obj模型渲染
+     * @param weapon 对应武器
+     */
+    public static void renderModel(PoseStack pose, MultiBufferSource buffer, int light, ItemStack weapon) {
+        CCModel model = WeaponTESR.getWeaponModel(weapon);
+        if (model == null) return;
+        ResourceLocation res = ModUtils.fa("textures/weapon/" + getItemID(weapon) + ".png");
+        RenderType rt = BH3RenderTypes.weapon(res);
         CCRenderState cc = CCRenderState.instance();
         cc.reset();
-        cc.bind(renderType, buffer, poseStack);
+        cc.bind(rt, buffer, pose);
         cc.baseColour = 0xFFFFFFFF;
         cc.brightness = light;
         cc.overlay = 0xFFFF;

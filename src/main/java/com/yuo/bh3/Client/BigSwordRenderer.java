@@ -4,18 +4,12 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.math.Axis;
 import com.yuo.bh3.Entity.BigSwordEntity;
 import com.yuo.bh3.Items.skill.BigSwordSkill;
-import com.yuo.bh3.ModUtils;
-import com.yuo.endless.client.lib.CCModel;
-import com.yuo.endless.client.lib.CCRenderState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.MultiBufferSource;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.blockentity.BeaconRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
-
-import static com.yuo.bh3.Client.WeaponTESR.getItemID;
 
 public class BigSwordRenderer extends EntityRenderer<BigSwordEntity> {
 
@@ -89,16 +83,7 @@ public class BigSwordRenderer extends EntityRenderer<BigSwordEntity> {
             pose.scale(MODEL_SCALE, MODEL_SCALE, MODEL_SCALE);
             pose.translate(-CENTER_X, -CENTER_Y + slashProgress * 0.75f, -CENTER_Z);
 
-            CCModel model = WeaponTESR.getWeaponModel(entity.getWeapon());
-            ResourceLocation res = ModUtils.fa("textures/weapon/" + getItemID(entity.getWeapon()) + ".png");
-            RenderType rt = BH3RenderTypes.weapon(res);
-            CCRenderState cc = CCRenderState.instance();
-            cc.reset();
-            cc.bind(rt, buffer, pose);
-            cc.baseColour = 0xFFFFFFFF;
-            cc.brightness = light;
-            cc.overlay = 0xFFFF;
-            model.render(cc);
+            WeaponTESR.renderModel(pose, buffer, light, entity.getWeapon());
         } finally {
             pose.popPose();
         }
