@@ -6,9 +6,7 @@ import com.mojang.math.Axis;
 import com.yuo.bh3.Client.lib.CCModel;
 import com.yuo.bh3.Client.lib.CCRenderState;
 import com.yuo.bh3.Client.lib.OBJParser;
-import com.yuo.bh3.Items.BH3WeaponBigSword;
-import com.yuo.bh3.Items.BH3WeaponLance;
-import com.yuo.bh3.Items.BH3WeaponSickle;
+import com.yuo.bh3.Items.*;
 import com.yuo.bh3.ModUtils;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -46,19 +44,8 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
 
     @Override
     public void renderByItem(ItemStack stack, ItemDisplayContext ctx, PoseStack poseStack, MultiBufferSource buffer, int light, int overlay) {
-        // ---- 读当前玩家的挥动进度 ----
-        LocalPlayer player = Minecraft.getInstance().player;
-        float swing = 0f;
-        if (player != null) {
-            float partialTick = Minecraft.getInstance().getFrameTime();
-            swing = player.getAttackAnim(partialTick);   // 0 → 1 → 0 的曲线
-        }
-
         poseStack.pushPose();
         try {
-            // ---- 应用攻击动画 ----
-//            applyAttackAnim(poseStack, ctx, swing, stack);
-
             if (ctx == ItemDisplayContext.GUI || ctx == ItemDisplayContext.FIXED) {
                 renderIcon(stack, ctx, poseStack, buffer, light, overlay);
             } else {
@@ -108,6 +95,18 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
      */
     private void renderModel(PoseStack poseStack, MultiBufferSource buffer, ItemDisplayContext idc, ItemStack stack, int light, float scale) {
         poseStack.scale(scale, scale, scale);
+        Item weapon = stack.getItem();
+        if (weapon instanceof BH3WeaponSickle){
+            poseStack.translate(0.15f,0.2f,0.3f);
+        }else if (weapon instanceof BH3WeaponSword){
+            poseStack.translate(-0.05f,-0.125f,0);
+        }else if (weapon instanceof BH3WeaponBigSword){
+            poseStack.translate(0,-0.05f,0);
+        }else if (weapon instanceof BH3WeaponLance){
+            poseStack.translate(0.1f,0.1f,0);
+        }else if (weapon instanceof BH3WeaponBow){
+            poseStack.translate(-0.1f,0,0);
+        }else poseStack.translate(0,0,0);
         renderModel(poseStack, buffer, light, stack);
     }
 

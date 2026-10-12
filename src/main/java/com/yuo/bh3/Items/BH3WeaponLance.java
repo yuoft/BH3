@@ -9,7 +9,7 @@ import javax.annotation.Nullable;
 import java.util.List;
 
 /**
- * 枪
+ * 骑枪
  */
 public class BH3WeaponLance extends BH3BaseWeapon {
 

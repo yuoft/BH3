@@ -176,6 +176,7 @@
 	"bh3.tips.weapon_type_sword": "§cKatana",
 	"bh3.tips.weapon_type_big_sword": "§cGreatsword",
 	"bh3.tips.weapon_type_lance": "§cLance",
+	"bh3.tips.weapon_type_spear": "§cSpear",
 	"bh3.tips.weapon_type_sickle": "§cSickle",
 	"bh3.tips.weapon_type_bow": "§cBow",
 
@@ -192,6 +193,8 @@
 	"block.bh3.crystal_deep_ore": "Deepslate Crystal Ore",
 
 	"entity.bh3.weapon_arrow": "Weapon Arrow",
+	"entity.bh3.big_sword": "Big Sword:%s",
+	"entity.bh3.sickle": "Sickle:%s",
 
 	"advancements.bh3.obtain_crystal.title": "First Crystal",
 	"advancements.bh3.obtain_crystal.title.desc": "Found a sparkling crystal deep in the mine",

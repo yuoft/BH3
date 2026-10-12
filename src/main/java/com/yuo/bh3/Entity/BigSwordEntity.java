@@ -3,6 +3,7 @@ package com.yuo.bh3.Entity;
 import com.yuo.bh3.Items.BH3WeaponBigSword;
 import com.yuo.bh3.Items.skill.BigSwordSkill;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -23,18 +24,12 @@ public class BigSwordEntity extends Entity {
     public static final int STATE_SLASHING = 1;
     private static final int SLASH_LINGER_TICKS = 2;   // 动画结束后多活 2 tick
 
-    private static final EntityDataAccessor<Integer> DATA_STATE =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> DATA_CHARGE_TICKS =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Integer> DATA_SLASH_TICKS =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
-    private static final EntityDataAccessor<Optional<UUID>> DATA_OWNER =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.OPTIONAL_UUID);
-    private static final EntityDataAccessor<Float> DATA_CHARGE_PROGRESS =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.FLOAT);
-    private static final EntityDataAccessor<ItemStack> DATA_WEAPON =
-            SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.ITEM_STACK);
+    private static final EntityDataAccessor<Integer> DATA_STATE = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_CHARGE_TICKS = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Integer> DATA_SLASH_TICKS = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.INT);
+    private static final EntityDataAccessor<Optional<UUID>> DATA_OWNER = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.OPTIONAL_UUID);
+    private static final EntityDataAccessor<Float> DATA_CHARGE_PROGRESS = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.FLOAT);
+    private static final EntityDataAccessor<ItemStack> DATA_WEAPON = SynchedEntityData.defineId(BigSwordEntity.class, EntityDataSerializers.ITEM_STACK);
 
     public BigSwordEntity(Level level) {
         super(BH3EntityTypes.BIG_SWORD.get(), level);
@@ -57,6 +52,11 @@ public class BigSwordEntity extends Entity {
     }
 
     @Override
+    public Component getDisplayName() {
+        return Component.translatable("entity.bh3.big_sword", getWeapon().getDisplayName());
+    }
+
+    @Override
     protected void defineSynchedData() {
         this.entityData.define(DATA_STATE, STATE_CHARGING);
         this.entityData.define(DATA_CHARGE_TICKS, 0);
@@ -67,23 +67,53 @@ public class BigSwordEntity extends Entity {
     }
 
     // ===== getter / setter =====
-    public int getState() { return this.entityData.get(DATA_STATE); }
-    public void setState(int state) { this.entityData.set(DATA_STATE, state); }
+    public int getState() {
+        return this.entityData.get(DATA_STATE);
+    }
 
-    public int getChargeTicks() { return this.entityData.get(DATA_CHARGE_TICKS); }
-    public void setChargeTicks(int t) { this.entityData.set(DATA_CHARGE_TICKS, t); }
+    public void setState(int state) {
+        this.entityData.set(DATA_STATE, state);
+    }
 
-    public int getSlashTicks() { return this.entityData.get(DATA_SLASH_TICKS); }
-    public void setSlashTicks(int t) { this.entityData.set(DATA_SLASH_TICKS, t); }
+    public int getChargeTicks() {
+        return this.entityData.get(DATA_CHARGE_TICKS);
+    }
 
-    public Optional<UUID> getOwnerUUID() { return this.entityData.get(DATA_OWNER); }
-    public void setOwnerUUID(UUID uuid) { this.entityData.set(DATA_OWNER, Optional.of(uuid)); }
+    public void setChargeTicks(int t) {
+        this.entityData.set(DATA_CHARGE_TICKS, t);
+    }
 
-    public float getChargeProgress() { return this.entityData.get(DATA_CHARGE_PROGRESS); }
-    public void setChargeProgress(float p) { this.entityData.set(DATA_CHARGE_PROGRESS, p); }
+    public int getSlashTicks() {
+        return this.entityData.get(DATA_SLASH_TICKS);
+    }
 
-    public ItemStack getWeapon(){ return this.entityData.get(DATA_WEAPON);}
-    public void setWeapon(ItemStack stack) { this.entityData.set(DATA_WEAPON, stack);}
+    public void setSlashTicks(int t) {
+        this.entityData.set(DATA_SLASH_TICKS, t);
+    }
+
+    public Optional<UUID> getOwnerUUID() {
+        return this.entityData.get(DATA_OWNER);
+    }
+
+    public void setOwnerUUID(UUID uuid) {
+        this.entityData.set(DATA_OWNER, Optional.of(uuid));
+    }
+
+    public float getChargeProgress() {
+        return this.entityData.get(DATA_CHARGE_PROGRESS);
+    }
+
+    public void setChargeProgress(float p) {
+        this.entityData.set(DATA_CHARGE_PROGRESS, p);
+    }
+
+    public ItemStack getWeapon() {
+        return this.entityData.get(DATA_WEAPON);
+    }
+
+    public void setWeapon(ItemStack stack) {
+        this.entityData.set(DATA_WEAPON, stack);
+    }
 
     public Player getOwner() {
         Optional<UUID> uuid = getOwnerUUID();
@@ -110,17 +140,14 @@ public class BigSwordEntity extends Entity {
 
         if (getState() == STATE_CHARGING) { //蓄力计时
             // 玩家没在蓄力了 → 立刻劈下
-            boolean stillCharging = owner.isUsingItem()
-                    && owner.getUseItem().getItem() instanceof BH3WeaponBigSword;
+            boolean stillCharging = owner.isUsingItem() && owner.getUseItem().getItem() instanceof BH3WeaponBigSword;
 
             if (!stillCharging) {
                 // ★ 玩家松手
                 if (getChargeTicks() < BigSwordSkill.CHARGE_MIN_TICKS) {
                     // 蓄力不足 → 直接消失，不劈下
                     if (level instanceof ServerLevel serverLevel) {
-                        serverLevel.playSound(null, getX(), getY(), getZ(),
-                                SoundEvents.FIRE_EXTINGUISH,
-                                SoundSource.PLAYERS, 0.6f, 1.2f);
+                        serverLevel.playSound(null, getX(), getY(), getZ(), SoundEvents.FIRE_EXTINGUISH, SoundSource.PLAYERS, 0.6f, 1.2f);
                     }
                     this.discard();
                 } else {
@@ -150,8 +177,10 @@ public class BigSwordEntity extends Entity {
     }
 
     @Override
-    protected void readAdditionalSaveData(CompoundTag tag) { }
+    protected void readAdditionalSaveData(CompoundTag tag) {
+    }
 
     @Override
-    protected void addAdditionalSaveData(CompoundTag tag) { }
+    protected void addAdditionalSaveData(CompoundTag tag) {
+    }
 }

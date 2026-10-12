@@ -2,6 +2,7 @@ package com.yuo.bh3.Entity;
 
 import com.yuo.bh3.Items.skill.SickleSkill;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -60,6 +61,11 @@ public class SickleEntity extends Entity {
         } else {
             this.discard();
         }
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("entity.bh3.sickle", getWeapon().getDisplayName());
     }
 
     @Override
