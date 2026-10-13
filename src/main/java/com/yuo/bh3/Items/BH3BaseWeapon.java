@@ -3,7 +3,6 @@ package com.yuo.bh3.Items;
 import com.yuo.bh3.Client.WeaponTESR;
 import com.yuo.bh3.Entity.BH3EntityTypes;
 import com.yuo.bh3.Entity.PlacedWeaponEntity;
-import com.yuo.bh3.Items.skill.BigSwordSkill;
 import com.yuo.bh3.capability.HonkaiEnergyProvider;
 import com.yuo.bh3.capability.IHonkaiEnergy;
 import net.minecraft.ChatFormatting;
@@ -101,7 +100,7 @@ public class BH3BaseWeapon extends SwordItem {
      * 是否有足够消耗的崩坏能
      * @return true 足够消耗
      */
-    public static boolean isSkillEnergyRun(Level level, Player player, float cost) {
+    public static boolean isSkillEnergyCost(Level level, Player player, float cost) {
         if (level.isClientSide) return false;
         Optional<IHonkaiEnergy> honkaiEnergy = HonkaiEnergyProvider.get(player).resolve();
         if (honkaiEnergy.isPresent()) {

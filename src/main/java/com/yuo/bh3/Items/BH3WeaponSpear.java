@@ -19,7 +19,7 @@ public class BH3WeaponSpear extends BH3BaseWeapon {
 
 	@Override
 	public void appendHoverText(ItemStack stack, @Nullable Level world, List<Component> components, TooltipFlag flag) {
-		components.add(Component.translatable("bh3.tips.weapon_type_lance"));
+		components.add(Component.translatable("bh3.tips.weapon_type_spear"));
 		super.appendHoverText(stack, world, components, flag);
 	}
 }

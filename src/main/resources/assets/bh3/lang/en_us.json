@@ -195,6 +195,7 @@
 	"entity.bh3.weapon_arrow": "Weapon Arrow",
 	"entity.bh3.big_sword": "Big Sword:%s",
 	"entity.bh3.sickle": "Sickle:%s",
+	"entity.bh3.lance": "Lance:%s",
 
 	"advancements.bh3.obtain_crystal.title": "First Crystal",
 	"advancements.bh3.obtain_crystal.title.desc": "Found a sparkling crystal deep in the mine",

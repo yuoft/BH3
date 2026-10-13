@@ -69,8 +69,8 @@ public class BH3Items {
 	public static RegistryObject<Item> bh3_DZQL = ITEMS.register("bh3_dzql", () -> new BH3WeaponSword(WeaponAttributes.DZQL));
 	public static RegistryObject<Item> bh3_DZQLM = ITEMS.register("bh3_dzqlm", () -> new BH3WeaponSword(WeaponAttributes.DZQLM));
 	public static RegistryObject<Item> bh3_FLD = ITEMS.register("bh3_fld", () -> new FLD(WeaponAttributes.FLD));
-	public static RegistryObject<Item> bh3_FNMZ = ITEMS.register("bh3_fnmz", () -> new BH3WeaponLance(WeaponAttributes.FNMZ));
-	public static RegistryObject<Item> bh3_FNMZC = ITEMS.register("bh3_fnmzc", () -> new BH3WeaponLance(WeaponAttributes.FNMZC));
+	public static RegistryObject<Item> bh3_FNMZ = ITEMS.register("bh3_fnmz", () -> new BH3WeaponSpear(WeaponAttributes.FNMZ));
+	public static RegistryObject<Item> bh3_FNMZC = ITEMS.register("bh3_fnmzc", () -> new BH3WeaponSpear(WeaponAttributes.FNMZC));
 	public static RegistryObject<Item> bh3_HSZS = ITEMS.register("bh3_hszs", () -> new BH3WeaponSickle(WeaponAttributes.HSZS));
 	public static RegistryObject<Item> bh3_HYBH = ITEMS.register("bh3_hybh", () -> new BH3WeaponLance(WeaponAttributes.HYBH));
 	public static RegistryObject<Item> bh3_HYBHC = ITEMS.register("bh3_hybhc", () -> new BH3WeaponLance(WeaponAttributes.HYBHC));

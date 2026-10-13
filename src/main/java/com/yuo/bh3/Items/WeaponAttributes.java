@@ -39,9 +39,11 @@ public enum WeaponAttributes {
     SYJ(BH3ItemTiers.BH_32, 3, -2.9f, 16),     // 神陨剑·史尔特尔
     NYJ(BH3ItemTiers.BH_320, 3, -2.9f, 16),     // 涅炎剑·史尔特尔
 
+    //长枪
+    FNMZ(BH3ItemTiers.BH_35, 1, -2.7f, 11),    // 凡念梦兆
+    FNMZC(BH3ItemTiers.BH_350, 3, -2.6f, 14),   // 凡念梦兆·诸相自为
+
     // ==================== 骑枪 ====================
-    FNMZ(BH3ItemTiers.BH_33, 1, -2.7f, 11),    // 凡念梦兆
-    FNMZC(BH3ItemTiers.BH_330, 3, -2.6f, 14),   // 凡念梦兆·诸相自为
     HYBH(BH3ItemTiers.BH_33, 2, -2.7f, 13),    // 黑渊白花
     HYBHC(BH3ItemTiers.BH_330, 4, -2.6f, 16),   // 黑渊白花·创灭螺旋
     ZXX(BH3ItemTiers.BH_33, 2, -2.7f, 12),     // 星枪·主序星

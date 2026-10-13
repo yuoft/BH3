@@ -31,6 +31,10 @@ public class BH3EntityTypes {
             () -> EntityType.Builder.<SickleEntity>of(SickleEntity::new, MobCategory.MISC)
                     .sized(0.5f, 0.5f).clientTrackingRange(64)
                     .updateInterval(1).build("sickle"));
+    public static final RegistryObject<EntityType<LanceEntity>> LANCE = ENTITY_TYPES.register("lance",
+            () -> EntityType.Builder.<LanceEntity>of(LanceEntity::new, MobCategory.MISC)
+                    .sized(0.5f, 0.5f).clientTrackingRange(64)
+                    .updateInterval(1).build("lance"));
 
 
 }

@@ -38,7 +38,7 @@ public class SwordSkill {
     /**
      * 冷却
      */
-    public static final int HONKAI_COST = 80;
+    public static final int HONKAI_COST = 30;
 
     // ===================== 几何参数 =====================
     /**

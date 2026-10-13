@@ -33,7 +33,7 @@ public class BH3WeaponSword extends BH3BaseWeapon {
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!isSkillEnergyRun(level, player, SwordSkill.HONKAI_COST)) return InteractionResultHolder.fail(stack);
+		if (!isSkillEnergyCost(level, player, SwordSkill.HONKAI_COST)) return InteractionResultHolder.fail(stack);
 
 		if (level.isClientSide) {
 			if (player instanceof LocalPlayer lp) {

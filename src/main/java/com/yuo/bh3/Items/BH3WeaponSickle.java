@@ -30,7 +30,7 @@ public class BH3WeaponSickle extends BH3BaseWeapon {
 	public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
 		ItemStack stack = player.getItemInHand(hand);
 
-		if (!BH3BaseWeapon.isSkillEnergyRun(level, player, SickleSkill.HONKAI_COST)) return InteractionResultHolder.fail(stack);
+		if (!BH3BaseWeapon.isSkillEnergyCost(level, player, SickleSkill.HONKAI_COST)) return InteractionResultHolder.fail(stack);
 
 		if (player instanceof ServerPlayer sp) {
 			SickleSkill.spawn(sp, stack);

@@ -21,7 +21,7 @@ public class BigSwordSkill {
 
     public static final int CHARGE_MIN_TICKS = 20;
     public static final int CHARGE_MAX_TICKS = 600;
-    public static final int HONKAI_COST  = 100;
+    public static final int HONKAI_COST  = 50;
     /**
      * 长方体基础长度（前方延伸多少格）
      */

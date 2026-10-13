@@ -1,11 +1,8 @@
 package com.yuo.bh3.Event;
 
 import com.yuo.bh3.BH3;
-import com.yuo.bh3.Client.BigSwordRenderer;
-import com.yuo.bh3.Client.PlacedWeaponRenderer;
-import com.yuo.bh3.Client.SickleRenderer;
+import com.yuo.bh3.Client.*;
 import com.yuo.bh3.Entity.BH3EntityTypes;
-import com.yuo.bh3.Client.WeaponArrowRender;
 import com.yuo.bh3.Items.BH3BaseWeapon;
 import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.Items.BH3WeaponBow;
@@ -31,6 +28,7 @@ public class ClientEvent {
 
         event.registerEntityRenderer(BH3EntityTypes.BIG_SWORD.get(), BigSwordRenderer::new);
         event.registerEntityRenderer(BH3EntityTypes.SICKLE.get(), SickleRenderer::new);
+        event.registerEntityRenderer(BH3EntityTypes.LANCE.get(), LanceRenderer::new);
     }
 
     /** 手动注册 2D 图标模型，避免因未被物品引用而不被烘焙 */

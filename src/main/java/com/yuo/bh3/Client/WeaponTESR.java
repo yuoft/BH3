@@ -103,9 +103,11 @@ public class WeaponTESR extends BlockEntityWithoutLevelRenderer {
         }else if (weapon instanceof BH3WeaponBigSword){
             poseStack.translate(0,-0.05f,0);
         }else if (weapon instanceof BH3WeaponLance){
-            poseStack.translate(0.1f,0.1f,0);
+            poseStack.translate(-0.2f,-0.15f,0);
         }else if (weapon instanceof BH3WeaponBow){
             poseStack.translate(-0.1f,0,0);
+        }else if (weapon instanceof BH3WeaponSpear){
+            poseStack.translate(0.1f,0.1f,0);
         }else poseStack.translate(0,0,0);
         renderModel(poseStack, buffer, light, stack);
     }
