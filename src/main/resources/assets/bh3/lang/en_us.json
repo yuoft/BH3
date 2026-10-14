@@ -197,6 +197,8 @@
 	"entity.bh3.sickle": "Sickle:%s",
 	"entity.bh3.lance": "Lance:%s",
 
+	"effect.bh3.honkai_energy_up": "Honkai Energy Up",
+
 	"advancements.bh3.obtain_crystal.title": "First Crystal",
 	"advancements.bh3.obtain_crystal.title.desc": "Found a sparkling crystal deep in the mine",
 	"advancements.bh3.energy_ore.title": "Taste of Honkai Energy",

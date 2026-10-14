@@ -6,6 +6,7 @@ import com.yuo.bh3.Items.BH3Items;
 import com.yuo.bh3.Proxy.ClientProxy;
 import com.yuo.bh3.Proxy.CommonProxy;
 import com.yuo.bh3.Proxy.IProxy;
+import com.yuo.bh3.effects.BH3Effects;
 import com.yuo.bh3.packet.NetWorkHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -29,6 +30,7 @@ public class BH3 {
         BH3Tabs.TABS.register(modEventBus);
         SoundRegistry.SOUNDS.register(modEventBus);
         BH3EntityTypes.ENTITY_TYPES.register(modEventBus);
+        BH3Effects.EFFECTS.register(modEventBus);
         NetWorkHandler.registerMessage();
 
         proxy.registerHandlers(modEventBus);
@@ -37,7 +39,6 @@ public class BH3 {
          * 配方设计，成就系添加
          * 武器等级（超限和普通？）+合成路径+升阶仪式+数值调整
          * 崩坏能能量系统（恢复方法，恢复buff）
-         * 长枪（向前刺一下），弓（左键一次射出大量箭矢或连续射出箭矢）
          */
 
     }

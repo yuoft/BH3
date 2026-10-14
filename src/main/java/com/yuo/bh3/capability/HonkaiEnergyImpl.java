@@ -1,6 +1,8 @@
 package com.yuo.bh3.capability;
 
+import com.yuo.bh3.effects.BH3Effects;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 
 public class HonkaiEnergyImpl implements IHonkaiEnergy {
@@ -36,12 +38,17 @@ public class HonkaiEnergyImpl implements IHonkaiEnergy {
 
     @Override
     public void tick(Player player) {
-        // 服务端才回复
         if (player.level().isClientSide) return;
+        if (energy >= maxEnergy) return;
 
-        if (energy < maxEnergy) {
-            energy = Math.min(maxEnergy, energy + REGEN_PER_TICK);
+        MobEffectInstance effect = player.getEffect(BH3Effects.honkaiEnergyUp.get());
+        float multiplier = 1.0f;
+        if (effect != null) {
+            // I 级 +50%，II 级 +100%，III 级 +150%...
+            multiplier += 0.5f * (effect.getAmplifier() + 1);
         }
+
+        energy = Math.min(maxEnergy, energy + REGEN_PER_TICK * multiplier);
     }
 
     public void copyFrom(IHonkaiEnergy other) {

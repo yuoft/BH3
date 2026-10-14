@@ -197,6 +197,8 @@
 	"entity.bh3.sickle": "镰刀：%s",
 	"entity.bh3.lance": "骑枪：%s",
 
+	"effect.bh3.honkai_energy_up": "能量满溢",
+
 	"advancements.bh3.obtain_crystal.title": "第一颗水晶",
 	"advancements.bh3.obtain_crystal.title.desc": "在矿洞深处发现了闪耀的结晶",
 	"advancements.bh3.energy_ore.title": "崩坏能的味道",

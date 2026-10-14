@@ -51,10 +51,7 @@ public class SyncHonkaiEnergyPacket {
 
     /** 发给单个玩家 */
     public static void send(ServerPlayer player, float energy, float maxEnergy) {
-        NetWorkHandler.INSTANCE.send(
-                PacketDistributor.PLAYER.with(() -> player),
-                new SyncHonkaiEnergyPacket(energy, maxEnergy)
-        );
+        NetWorkHandler.INSTANCE.send(PacketDistributor.PLAYER.with(() -> player), new SyncHonkaiEnergyPacket(energy, maxEnergy));
     }
 
     /** 广播给所有玩家（可选） */
