@@ -2,6 +2,7 @@ package com.yuo.bh3.Entity;
 
 import com.yuo.bh3.Items.skill.LanceSkill;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
@@ -146,6 +147,11 @@ public class LanceEntity extends Entity {
         }
         double t = Math.min(1.0, (distance - MAX_LINEAR_DISTANCE) / GRAVITY_RAMP_DISTANCE);
         return BASE_GRAVITY + (MAX_GRAVITY - BASE_GRAVITY) * t;
+    }
+
+    @Override
+    public Component getDisplayName() {
+        return Component.translatable("entity.bh3.lance", getWeapon().getDisplayName());
     }
 
     @Override

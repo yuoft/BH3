@@ -65,6 +65,7 @@ public class BH3WeaponLance extends BH3BaseWeapon {
 		if (player instanceof ServerPlayer sp) {
 			LanceSkill.spawn(sp, stack.copy());
 			HonkaiEnergyProvider.get(player).ifPresent(h -> h.consume(LanceSkill.HONKAI_COST));
+			stack.hurtAndBreak(15, player, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
 		}
 
 		player.swing(player.getUsedItemHand(), true);

@@ -50,7 +50,6 @@ public class BH3WeaponBigSword extends BH3BaseWeapon {
 
 		// 服务端生成实体
 		if (player instanceof ServerPlayer sp) {
-
 			BigSwordSkill.spawn(sp, stack);
 		}
 		player.startUsingItem(hand);
@@ -63,7 +62,8 @@ public class BH3WeaponBigSword extends BH3BaseWeapon {
 			Optional<IHonkaiEnergy> honkaiEnergy = HonkaiEnergyProvider.get(player).resolve();
 			int chargeTicks = getUseDuration(stack) - timeLeft;
 			if (chargeTicks >= BigSwordSkill.CHARGE_MIN_TICKS) { //完成技能释放，消耗崩坏能
-				honkaiEnergy.ifPresent(iHonkaiEnergy -> iHonkaiEnergy.consume(-BigSwordSkill.HONKAI_COST));
+				honkaiEnergy.ifPresent(iHonkaiEnergy -> iHonkaiEnergy.consume(BigSwordSkill.HONKAI_COST));
+				stack.hurtAndBreak(17, player, p -> p.broadcastBreakEvent(p.getUsedItemHand()));
 			}
 		}
 	}

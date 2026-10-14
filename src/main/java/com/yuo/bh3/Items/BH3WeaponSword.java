@@ -43,6 +43,7 @@ public class BH3WeaponSword extends BH3BaseWeapon {
 			if (player instanceof ServerPlayer sp) {
 				SwordSkill.startServer(sp);
 				HonkaiEnergyProvider.get(player).ifPresent(h -> h.consume(SwordSkill.HONKAI_COST));
+				stack.hurtAndBreak(10, player, p -> p.broadcastBreakEvent(hand));
 			}
 		}
 

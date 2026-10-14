@@ -35,6 +35,7 @@ public class BH3WeaponSickle extends BH3BaseWeapon {
 		if (player instanceof ServerPlayer sp) {
 			SickleSkill.spawn(sp, stack);
 			HonkaiEnergyProvider.get(player).ifPresent(h -> h.consume(SickleSkill.HONKAI_COST));
+			stack.hurtAndBreak(13, player, p -> p.broadcastBreakEvent(hand));
 		}
 
 		player.swing(hand, true);
