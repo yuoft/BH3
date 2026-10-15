@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "bh3:crystal_ore"
+    "bh3:crystal_ore",
+    "bh3:crystal_deep_ore"
   ]
 }

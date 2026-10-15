@@ -36,9 +36,7 @@ public class BH3 {
         proxy.registerHandlers(modEventBus);
 
         /*
-         * 配方设计，成就系添加
-         * 武器等级（超限和普通？）+合成路径+升阶仪式+数值调整
-         * 崩坏能能量系统（恢复方法，恢复buff）
+         * 模具添加战利品箱生成（类是锻造模版），体力药水酿造合成
          */
 
     }

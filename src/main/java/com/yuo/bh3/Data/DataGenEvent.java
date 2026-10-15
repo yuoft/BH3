@@ -17,14 +17,19 @@ public class DataGenEvent {
 
     @SubscribeEvent
     public static void addLoot(GatherDataEvent event){
-        boolean b = event.includeServer();
-        boolean b0 = event.includeClient();
         DataGenerator generator = event.getGenerator();
         PackOutput output = generator.getPackOutput();
-        CompletableFuture<Provider> future = event.getLookupProvider();
+        CompletableFuture<Provider> lookup = event.getLookupProvider();
         ExistingFileHelper fileHelper = event.getExistingFileHelper();
-        generator.addProvider(b, new ModWorldGen(output, future));
-        generator.addProvider(b0, new ModItemModelProvider(output, BH3.MOD_ID, fileHelper));
+
+        if (event.includeClient()) {
+            generator.addProvider(true, new ModItemModelProvider(output, BH3.MOD_ID, fileHelper));
+        }
+
+        if (event.includeServer()) {
+            generator.addProvider(true, new ModDataRecipes(output));
+            generator.addProvider(true, new ModWorldGen(output, lookup));
+        }
     }
 
 }

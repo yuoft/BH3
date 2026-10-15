@@ -10,8 +10,8 @@ import net.minecraft.world.level.Level;
 /**
  * 学习芯片
  */
-public class Chips extends Item {
-    public Chips() {
+public class ExpChip extends Item {
+    public ExpChip() {
         super(new Item.Properties());
     }
 
@@ -21,13 +21,13 @@ public class Chips extends Item {
         Item item = stack.getItem();
         int exp = 0;
         if (item == BH3Items.baseChip.get()){
-            exp = 5;
+            exp = 7;
         }else if (item == BH3Items.advancedChips.get()){
-            exp = 10;
+            exp = 14;
         }else if (item == BH3Items.seniorChips.get()){
-            exp = 20;
+            exp = 28;
         }else if (item == BH3Items.premiumChips.get()){
-            exp = 50;
+            exp = 56;
         }
         if (!level.isClientSide){
             player.giveExperiencePoints(exp);

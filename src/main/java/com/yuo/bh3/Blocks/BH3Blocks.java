@@ -13,13 +13,13 @@ public class BH3Blocks {
     public static RegistryObject<Block> energyOre = BLOCKS.register("energy_ore",
             () -> new EnergyOre(5, 10, UniformInt.of(1,3)));
     public static RegistryObject<Block> energyDeepOre = BLOCKS.register("energy_deep_ore",
-            () -> new EnergyOre(5, 10, UniformInt.of(1,3)));
+            () -> new EnergyOre(6.5f, 15, UniformInt.of(2,4)));
     public static RegistryObject<Block> energyEndOre = BLOCKS.register("energy_end_ore",
             () -> new EnergyOre(6, 12, UniformInt.of(3,5)));
     public static RegistryObject<Block> energyNetherOre = BLOCKS.register("energy_nether_ore",
             () -> new EnergyOre(5.5f, 11, UniformInt.of(2,4)));
     public static RegistryObject<Block> crystalOre = BLOCKS.register("crystal_ore",
-            () -> new EnergyOre(6, 15, UniformInt.of(4,6)));
+            () -> new EnergyOre(6, 15, UniformInt.of(4,7)));
     public static RegistryObject<Block> crystalDeepOre = BLOCKS.register("crystal_deep_ore",
-            () -> new EnergyOre(6, 15, UniformInt.of(4,6)));
+            () -> new EnergyOre(7.5f, 20, UniformInt.of(5,8)));
 }

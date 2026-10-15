@@ -7,10 +7,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 /**
  * 客户端属性注册
  */
-public class ClientProxy implements IProxy {
+public class ClientProxy extends CommonProxy {
 
     @Override
     public void registerHandlers(IEventBus modBus) {
+        super.registerHandlers(modBus);
         modBus.addListener(this::clientSetup);
     }
 

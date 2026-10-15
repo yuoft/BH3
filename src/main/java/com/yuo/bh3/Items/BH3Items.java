@@ -3,7 +3,6 @@ package com.yuo.bh3.Items;
 import com.yuo.bh3.BH3;
 import com.yuo.bh3.Blocks.BH3Blocks;
 import com.yuo.bh3.SoundRegistry;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,17 +14,17 @@ public class BH3Items {
 	public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, BH3.MOD_ID);
 
 	public static RegistryObject<Item> precisionCard = ITEMS.register("precision_card", PrecisionCard::new);
-
+	//水晶
 	public static RegistryObject<Item> crystal1 = ITEMS.register("crystal1", BH3BaseItem::new);
 	public static RegistryObject<Item> crystal5 = ITEMS.register("crystal5", BH3BaseItem::new);
 	public static RegistryObject<Item> crystal25 = ITEMS.register("crystal25", BH3BaseItem::new);
 	public static RegistryObject<Item> crystal50 = ITEMS.register("crystal50", BH3BaseItem::new);
 	public static RegistryObject<Item> crystal100 = ITEMS.register("crystal100", BH3BaseItem::new);
-
-	public static RegistryObject<Item> baseChip = ITEMS.register("base_chip", Chips::new);
-	public static RegistryObject<Item> advancedChips = ITEMS.register("advanced_chips", Chips::new);
-	public static RegistryObject<Item> seniorChips = ITEMS.register("senior_chips", Chips::new);
-	public static RegistryObject<Item> premiumChips = ITEMS.register("premium_chips", Chips::new);
+	//学习芯片
+	public static RegistryObject<Item> baseChip = ITEMS.register("base_chip", ExpChip::new);
+	public static RegistryObject<Item> advancedChips = ITEMS.register("advanced_chips", ExpChip::new);
+	public static RegistryObject<Item> seniorChips = ITEMS.register("senior_chips", ExpChip::new);
+	public static RegistryObject<Item> premiumChips = ITEMS.register("premium_chips", ExpChip::new);
 
 	public static RegistryObject<Item> einsteinRingmagnet = ITEMS.register("einstein_ringmagnet", BH3BaseItem::new);
 	public static RegistryObject<Item> superHydrogenium = ITEMS.register("super_hydrogenium", BH3BaseItem::new);
@@ -43,19 +42,16 @@ public class BH3Items {
 	public static RegistryObject<Item> honkaiCrystal = ITEMS.register("honkai_crystal", BH3BaseItem::new);
 	public static RegistryObject<Item> tripleCrystal = ITEMS.register("triple_crystal", BH3BaseItem::new);
 	public static RegistryObject<Item> honkaiChip = ITEMS.register("honkai_chip", BH3BaseItem::new);
-
-	public static RegistryObject<Item> weaponMold0 = ITEMS.register("weapon_mold0", BH3BaseItem::new);
-	public static RegistryObject<Item> weaponMold1 = ITEMS.register("weapon_mold1", BH3BaseItem::new);
-	public static RegistryObject<Item> weaponMold2 = ITEMS.register("weapon_mold2", BH3BaseItem::new);
-	public static RegistryObject<Item> weaponMold3 = ITEMS.register("weapon_mold3", BH3BaseItem::new);
-	public static RegistryObject<Item> weaponMold4 = ITEMS.register("weapon_mold4", BH3BaseItem::new);
-
-	public static RegistryObject<Item> waterMelon = ITEMS.register("water_melon",
-			() -> new BH3Food(new FoodProperties.Builder().nutrition(3).saturationMod(9).build()));
-	public static RegistryObject<Item> sodaPop = ITEMS.register("soda_pop",
-			() -> new BH3Food(new FoodProperties.Builder().nutrition(6).saturationMod(18).build()));
-	public static RegistryObject<Item> staminaPotion = ITEMS.register("stamina_potion",
-			() -> new BH3Food(new FoodProperties.Builder().nutrition(10).saturationMod(30).build()));
+	//武器模具
+	public static RegistryObject<Item> weaponMoldSword = ITEMS.register("weapon_mold_sword", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMoldBigsword = ITEMS.register("weapon_mold_bigsword", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMoldLance = ITEMS.register("weapon_mold_lance", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMoldSickle = ITEMS.register("weapon_mold_sickle", BH3BaseItem::new);
+	public static RegistryObject<Item> weaponMoldBow = ITEMS.register("weapon_mold_bow", BH3BaseItem::new);
+	//食物
+	public static RegistryObject<Item> waterMelon = ITEMS.register("water_melon", () -> new BH3Food(BH3Food.waterMelon));
+	public static RegistryObject<Item> sodaPop = ITEMS.register("soda_pop", () -> new BH3Food(BH3Food.sodaPop));
+	public static RegistryObject<Item> staminaPotion = ITEMS.register("stamina_potion", StaMinaPotion::new);
 
 	// 武器
 	public static RegistryObject<Item> bh3_AXYW = ITEMS.register("bh3_axyw", () -> new BH3WeaponSickle(WeaponAttributes.AXYW));

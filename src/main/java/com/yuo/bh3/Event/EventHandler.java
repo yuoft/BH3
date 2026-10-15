@@ -11,14 +11,18 @@ import net.minecraft.network.chat.ClickEvent;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.HoverEvent;
 import net.minecraft.network.chat.Style;
+import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent.BreakEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -30,6 +34,16 @@ import net.minecraftforge.network.PacketDistributor;
  */
 @Mod.EventBusSubscriber(modid = BH3.MOD_ID)
 public class EventHandler {
+
+    @SubscribeEvent
+    public static void onLivingDrop(LivingDropsEvent event) {
+        LivingEntity living = event.getEntity();
+        Level level = living.level();
+        if (level.random.nextDouble() < 0.2){
+            event.getDrops().add(new ItemEntity(level, living.getX(), living.getY(), living.getZ(),
+                    new ItemStack(BH3Items.baseChip.get(), Mth.randomBetweenInclusive(level.random, 0, 5))));
+        }
+    }
 
     @SubscribeEvent
     public static void onLivingDeath(BreakEvent event) {

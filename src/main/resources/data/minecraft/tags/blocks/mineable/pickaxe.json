@@ -2,8 +2,10 @@
   "replace": false,
   "values": [
     "bh3:energy_ore",
+    "bh3:energy_deep_ore",
     "bh3:energy_end_ore",
     "bh3:energy_nether_ore",
-    "bh3:crystal_ore"
+    "bh3:crystal_ore",
+    "bh3:crystal_deep_ore"
   ]
 }
