@@ -198,6 +198,20 @@
 	"entity.bh3.lance": "骑枪：%s",
 
 	"effect.bh3.honkai_energy_up": "能量满溢",
+	"item.minecraft.potion.effect.honkai_energy": "能量满溢药水",
+	"item.minecraft.splash_potion.effect.honkai_energy": "喷溅型能量满溢药水",
+	"item.minecraft.lingering_potion.effect.honkai_energy": "滞留型能量满溢药水",
+	"item.minecraft.tipped_arrow.effect.honkai_energy": "能量满溢之箭",
+
+	"item.minecraft.potion.effect.strong_honkai_energy": "能量满溢药水 II",
+	"item.minecraft.splash_potion.effect.strong_honkai_energy": "喷溅型能量满溢药水 II",
+	"item.minecraft.lingering_potion.effect.strong_honkai_energy": "滞留型能量满溢药水 II",
+	"item.minecraft.tipped_arrow.effect.strong_honkai_energy": "能量满溢之箭 II",
+
+	"item.minecraft.potion.effect.long_honkai_energy": "能量满溢药水",
+	"item.minecraft.splash_potion.effect.long_honkai_energy": "喷溅型能量满溢药水",
+	"item.minecraft.lingering_potion.effect.long_honkai_energy": "滞留型能量满溢药水",
+	"item.minecraft.tipped_arrow.effect.long_honkai_energy": "能量满溢之箭",
 
 	"advancements.bh3.obtain_crystal.title": "第一颗水晶",
 	"advancements.bh3.obtain_crystal.title.desc": "在矿洞深处发现了闪耀的结晶",

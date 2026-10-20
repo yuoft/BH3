@@ -198,6 +198,20 @@
 	"entity.bh3.lance": "Lance:%s",
 
 	"effect.bh3.honkai_energy_up": "Honkai Energy Up",
+	"item.minecraft.potion.effect.honkai_energy": "Potion of Honkai Energy",
+	"item.minecraft.splash_potion.effect.honkai_energy": "Splash Potion of Honkai Energy",
+	"item.minecraft.lingering_potion.effect.honkai_energy": "Lingering Potion of Honkai Energy",
+	"item.minecraft.tipped_arrow.effect.honkai_energy": "Arrow of Honkai Energy",
+
+	"item.minecraft.potion.effect.strong_honkai_energy": "Potion of Honkai Energy II",
+	"item.minecraft.splash_potion.effect.strong_honkai_energy": "Splash Potion of Honkai Energy II",
+	"item.minecraft.lingering_potion.effect.strong_honkai_energy": "Lingering Potion of Honkai Energy II",
+	"item.minecraft.tipped_arrow.effect.strong_honkai_energy": "Arrow of Honkai Energy II",
+
+	"item.minecraft.potion.effect.long_honkai_energy": "Potion of Honkai Energy",
+	"item.minecraft.splash_potion.effect.long_honkai_energy": "Splash Potion of Honkai Energy",
+	"item.minecraft.lingering_potion.effect.long_honkai_energy": "Lingering Potion of Honkai Energy",
+	"item.minecraft.tipped_arrow.effect.long_honkai_energy": "Arrow of Honkai Energy",
 
 	"advancements.bh3.obtain_crystal.title": "First Crystal",
 	"advancements.bh3.obtain_crystal.title.desc": "Found a sparkling crystal deep in the mine",

@@ -44,8 +44,8 @@ public class HonkaiEnergyImpl implements IHonkaiEnergy {
         MobEffectInstance effect = player.getEffect(BH3Effects.honkaiEnergyUp.get());
         float multiplier = 1.0f;
         if (effect != null) {
-            // I 级 +50%，II 级 +100%，III 级 +150%...
-            multiplier += 0.5f * (effect.getAmplifier() + 1);
+            // I 级 +100%，II 级 +150%，III 级 +200%...
+            multiplier += 0.5f * (effect.getAmplifier() + 1) + 0.5f;
         }
 
         energy = Math.min(maxEnergy, energy + REGEN_PER_TICK * multiplier);

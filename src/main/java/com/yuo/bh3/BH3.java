@@ -7,6 +7,7 @@ import com.yuo.bh3.Proxy.ClientProxy;
 import com.yuo.bh3.Proxy.CommonProxy;
 import com.yuo.bh3.Proxy.IProxy;
 import com.yuo.bh3.effects.BH3Effects;
+import com.yuo.bh3.effects.BH3Potions;
 import com.yuo.bh3.packet.NetWorkHandler;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
@@ -31,6 +32,7 @@ public class BH3 {
         SoundRegistry.SOUNDS.register(modEventBus);
         BH3EntityTypes.ENTITY_TYPES.register(modEventBus);
         BH3Effects.EFFECTS.register(modEventBus);
+        BH3Potions.POTIONS.register(modEventBus);
         NetWorkHandler.registerMessage();
 
         proxy.registerHandlers(modEventBus);
