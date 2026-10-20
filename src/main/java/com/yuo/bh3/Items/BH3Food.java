@@ -11,7 +11,7 @@ public class BH3Food extends Item {
     }
 
     public static FoodProperties waterMelon = new FoodProperties.Builder().nutrition(3).saturationMod(9).build();
-    public static FoodProperties sodaPop = new FoodProperties.Builder().nutrition(6).saturationMod(18)
+    public static FoodProperties sodaPop = new FoodProperties.Builder().nutrition(6).saturationMod(18).alwaysEat()
             .effect(() -> new MobEffectInstance(MobEffects.REGENERATION, 20 * 10, 0), 1.0f).build();
-    public static FoodProperties staMinaPotion = new FoodProperties.Builder().nutrition(10).saturationMod(30).build();
+    public static FoodProperties staMinaPotion = new FoodProperties.Builder().nutrition(10).saturationMod(30).alwaysEat().build();
 }

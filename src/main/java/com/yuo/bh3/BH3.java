@@ -34,10 +34,5 @@ public class BH3 {
         NetWorkHandler.registerMessage();
 
         proxy.registerHandlers(modEventBus);
-
-        /*
-         * 模具添加战利品箱生成（类是锻造模版），体力药水酿造合成
-         */
-
     }
 }
